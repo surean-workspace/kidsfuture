@@ -678,16 +678,20 @@ body.gnb-open {
   background-color: transparent;
 
   .m-menu-btn span {
-    background-color: #fff;
+    // background-color: #fff;
   }
 
   @include xl-min {
-    .gnb > ul > li > a {
+    .gnb__nav > ul > li > a {
       line-height: 142px;
     }
 
-    .gnb .depth2 {
+    .gnb__nav .depth2 {
       top: calc(142px - 34px);
+    }
+
+    .gnb__nav__menu {
+      top: 60px;
     }
   }
 }
@@ -808,7 +812,7 @@ body.gnb-open {
   }
 
   .pc_sitemap_btn {
-    display: block;
+    display: none;
     position: absolute;
     top: 42px;
     right: 20px;
@@ -1296,13 +1300,26 @@ html {
     }
 
     .gnb {
-      position: relative;
-      right: 0 !important;
+      // position: relative;
+      // right: 0 !important;
       display: inline-block;
       width: auto;
       vertical-align: top;
       text-align: left;
+    }
 
+    .gnb-menu--fc {
+      ul {
+        @include transform(translateY(20px));
+        @include transition;
+      }
+
+      > li:hover ul {
+        @include transform(translateY(0));
+      }
+    }
+
+    .gnb__nav {
       > ul > li ul {
         border-radius: 0.625rem;
         padding-top: 1.25rem;
@@ -1325,7 +1342,7 @@ html {
             display: block;
             font-weight: 700;
             @include fz(20);
-            padding: 0 5em;
+            padding: 0 4em;
             line-height: $header-pc-height;
             color: $header-pc-1depth-color;
             @include transition;
@@ -1412,13 +1429,18 @@ html {
           // text-transform: uppercase;
           word-break: keep-all;
           font-weight: 400;
+          @include transition(color 0.2s);
         }
 
-        li:hover > a {
-          color: $header-pc-2depth-color-hover;
+        > li > a:hover {
+          font-weight: 700;
         }
 
         li {
+          &:hover > a {
+            color: $header-pc-2depth-color-hover;
+          }
+
           &.in > a {
             padding-left: 20px;
             padding-right: 20px;
@@ -1489,6 +1511,44 @@ html {
         z-index: 9999;
         height: auto;
         opacity: 1;
+      }
+    }
+
+    .gnb__nav__menu {
+      position: absolute;
+      top: 38px;
+      right: 0px;
+      @include transition;
+    }
+
+    .gnb__nav__menu__utils {
+      @include d-flex-wrap;
+
+      > li {
+        position: relative;
+        @include fz();
+      }
+
+      > li + li {
+        &:before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: 0px;
+          top: 0.22em;
+          height: 0.8em;
+          border-left: 1px solid rgba($color: #413f40, $alpha: 0.33);
+        }
+      }
+
+      a {
+        padding-left: 12px;
+        padding-right: 12px;
+        color: rgba(26, 26, 24, 0.8);
+
+        @include bp-hover {
+          color: $color-base;
+        }
       }
     }
   }
@@ -1729,9 +1789,9 @@ html {
   }
 }
 
-@include bp-max(1300px) {
-  #header .gnb {
-    padding-left: 50px;
+@include bp-max(1600px) {
+  #header .gnb__nav > ul > li > a {
+    padding: 0 2em;
   }
 }
 
@@ -1785,10 +1845,11 @@ html {
 
       &.on {
         z-index: 100000;
-        top: -11px;
+        // top: -11px;
       }
     }
 
+    .m-menu-btn.on,
     &.fixed .m-menu-btn.on {
       top: 24px;
     }
@@ -1865,6 +1926,47 @@ html {
         }
       }
     }
+
+    .m-lang__box {
+      @include d-flex;
+      @include align-items-center;
+      height: 100%;
+      padding-right: 80px;
+      @include fz();
+    }
+
+    .gnb__nav__menu {
+      border-bottom: 30px solid #f9f9f9;
+    }
+
+    .gnb__nav__menu__utils {
+      @include d-flex-wrap;
+      text-align: center;
+
+      > li {
+        @include flex-col(50%);
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      > li + li {
+        border-left: 1px solid #e0e0e0;
+      }
+
+      > li:nth-child(3n+1) {
+        border-left: 0;
+      }
+
+      a {
+        @include d-flex-wrap;
+        height: 100%;
+        @include align-items-center;
+        @include justify-content-center;
+        color: #000;
+        font-size: 23px;
+        line-height: 1.1;
+        padding: 20px 10px;
+      }
+    }
   }
 
   html {
@@ -1876,27 +1978,30 @@ html {
     }
   }
 
-  #header .gnb {
-    > ul {
-      overflow-x: hidden;
-      position: absolute;
-      top: 80px;
-      right: 0;
-      z-index: 100000;
-      width: 80%;
-      height: calc(100% - 80px);
-      background: $header-mobile-gnb-bg-color;
-      padding-bottom: 120px;
-    }
+  #header .gnb__nav {
+    z-index: 100000;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 22vh;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: 80%;
+    height: calc(100% - 80px);
+    background: $header-mobile-gnb-bg-color;
 
-    ul a {
+    .gnb-menu--fc a {
       display: block;
       padding-left: 36px;
       width: 100%;
       line-height: 1;
     }
 
-    > ul > li {
+    .gnb-menu--fc > li {
       width: 100%;
 
       > a {
@@ -1986,10 +2091,11 @@ html {
       height: 23px;
 
       &.on {
-        top: -13px;
+        // top: -13px;
       }
     }
 
+    .m-menu-btn.on,
     &.fixed .m-menu-btn.on {
       top: 15px;
     }
@@ -2021,18 +2127,14 @@ html {
       }
     }
 
-    .gnb {
-      > ul {
-        top: 55px;
-        height: calc(100% - 55px);
-        padding-bottom: 120px;
-      }
+    .gnb__nav {
+      top: 55px;
 
-      ul a {
+      .gnb-menu--fc a {
         padding-left: 20px;
       }
 
-      > ul > li.mb-in > a:before {
+      .gnb-menu--fc > li.mb-in > a:before {
         top: 12px;
         right: 20px;
         font-size: 23px;
@@ -2040,7 +2142,7 @@ html {
     }
 
     .m-lang {
-      padding: 12px 0 0 20px;
+      padding: 0 0 0 20px;
       height: 55px;
 
       .w-lang {
@@ -2052,7 +2154,7 @@ html {
       }
     }
 
-    .gnb > ul > li > {
+    .gnb__nav .gnb-menu--fc > li > {
       a {
         padding-top: 16px;
         padding-bottom: 16px;
@@ -2064,6 +2166,16 @@ html {
         padding-bottom: 12px;
         font-size: 13px;
       }
+    }
+
+    .gnb__nav__menu {
+      border-width: 20px;
+    }
+
+    .gnb__nav__menu__utils a {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      font-size: 14px;
     }
   }
 }
