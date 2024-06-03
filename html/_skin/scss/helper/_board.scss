@@ -1,0 +1,258 @@
+.board-wrap--fc a {
+  @include transition;
+  transition-property: background-color, border-color, opacity;
+}
+
+.board-wrap .category-tab {
+  display: none;
+}
+
+/*---- option */
+.board-utill-none,
+.search-none {
+  .board-search-wrap--fc {
+    display: none !important;
+  }
+}
+
+.board-utill-none,
+.board-tab-none {
+
+  .board-wrap--fc .category-tab--fc,
+  .board-wrap .category-tab {
+    display: none !important;
+  }
+}
+
+.board-utill-none,
+.board-paging-none {
+
+  .board-wrap--fc .board-paging,
+  .board-wrap .board-paging {
+    display: none !important;
+  }
+}
+
+.board-click-none {
+
+  .gallery-list--fc a,
+  .basic-board-list--fc a {
+    pointer-events: none !important;
+  }
+}
+
+/*----- board search */
+.board-search-wrap--fc {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+
+  > form {
+    text-align: right;
+  }
+
+  input[type='text'],
+  select {
+    border-color: #ddd;
+    height: 3rem;
+  }
+
+  select {
+    padding: 0 1rem;
+  }
+
+  input[type='text'] {
+    padding-right: 3rem;
+  }
+
+  a {
+    right: 0;
+    padding-right: 3rem;
+    background-image: url('/html/_skin/img/common/ico_search_btn.png');
+    background-size: 33.333%;
+  }
+}
+
+@include md-min {
+  .board-search-wrap--fc {
+    p {
+      margin: 0 5px;
+
+      &.search-select-wrap--fc {
+        width: 160px;
+      }
+
+      &.search-input-wrap--fc {
+        width: 360px;
+
+        input[type='text'] {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*----- total */
+.board-search-wrap--fc > .board_list_total--fc {
+  padding-top: 2rem;
+  line-height: 1;
+  color: rgba(102, 102, 102, 0.7);
+
+  .search-total-num__accent--fc {}
+}
+
+/*----- 카테고리 */
+.board-wrap--fc .category-tab--fc {
+  margin-bottom: 3rem;
+}
+
+/*----- 페이징 */
+.board-wrap--fc .board-paging,
+.products--fc .board-paging,
+.form--fc .board-paging {
+  > ol {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  > a,
+  li > a {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid transparent;
+    margin: 0 2px;
+    line-height: calc(2rem - 2px);
+    transition-property: background-color;
+    border-radius: 50%;
+    color: #111;
+  }
+
+  li {
+
+    &.on > a,
+    &:hover > a {
+      // border: 1px solid #0d0d0d;
+    }
+
+    &:hover > a {
+      background-color: #dadada;
+      color: #111;
+    }
+
+    &.on > a {
+      background-color: $color-base;
+      border-color: $color-base;
+      color: #fff;
+    }
+  }
+}
+
+.products--fc .board-paging,
+.board-wrap--fc .board-paging {
+  margin-top: 3.25rem;
+}
+
+/*----- 일반 게시판 */
+.basic-board-list--fc,
+.webzine-board-list--fc {
+  tbody tr.no-data--fc td {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  thead {
+    th {
+      height: 3.25rem;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  @include md-min {
+    td {
+      height: 3.25rem;
+    }
+  }
+}
+
+/*----- 갤러리 공통 */
+.gallery-title--fc {
+  line-height: 1.5;
+}
+
+.gallery-date--fc {
+  display: none;
+}
+
+.board-wrap--fc .gallery-list--fc {
+  border-top: 0;
+  text-align: center;
+
+  figure {
+    margin-top: 0;
+
+    a {
+      border-bottom: 0;
+
+      .thumb-wrap--fc {
+        border: 0;
+
+        > img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include transform(translate(-50%, -50%));
+        }
+      }
+    }
+  }
+
+  @include md-min {
+    figure {
+      a:hover {
+        .thumb-wrap--fc {
+          &:after {
+            border: 0;
+            display: block;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  @include xl-min {
+    figure {
+      width: 33.3333%;
+    }
+  }
+}
+
+/*----- 갤러리 - 이미지 */
+.board-wrap--fc .gallery-list--fc.gallery {
+  figure {
+    a {
+      .thumb-wrap--fc {
+        background-color: #f6f6f6;
+
+        &.embed-responsive-16by9 {
+          padding-bottom: 59.1%;
+        }
+
+        > img {
+          width: auto;
+          max-width: none;
+        }
+      }
+    }
+  }
+}
+
+// view
+.board-wrap--fc .board-view--fc header,
+.board-wrap--fc .board-view--fc header h1 {}
+
+/*-------latest */

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+@import "common/variables";
+@import "../../scss/common/mixins";
+@import "../../scss/common/placeholders"; // extend
+@import "../../scss/lib/hover/hover"; // hover plugin
+
+@import "../../scss/common/base"; // reset
+
+@import "../../scss/common/board";
+@import "../../scss/common/member";
+@import "import/common"; // 공통요소 + header + footer
+
+
+// import
+@import "import/reservation"; // 회의실
+
+// helper
+@import "helper/grid";
+@import "helper/elements";
+@import "helper/board";
+
+// pages
+@import "import/main";
+@import "import/sub";
+@import "pages/about";
+@import "pages/participate";
+@import "pages/commu";
+@import "pages/space";
+
+
+// lang
+@import "import/lang"; // 다국어
