@@ -4,8 +4,8 @@
 $color-base: rgb(0, 85, 162);       // 기업 아이덴티티 색 -> ⭐반드시 rgb일 것!
 $color-base-hover: lighten($color-base, 5%); // 버튼일시 hover 배경색
 $color-base-hover-alpha: rgba($color-base, .7); // 버튼일시 hover 배경색 불투명 스타일
-$color-point: #fec600;      // 강조색
-$font-color-base: #333;     // 일반 글자색 => 메뉴색
+$color-point: #90c31f;      // 강조색
+$font-color-base: #151515;     // 일반 글자색 => 메뉴색
 $wrapper-bg-color: #fff;    // wrapper 배경색 (사이트 배경색)
 
 // font
@@ -21,7 +21,7 @@ $site-config-header-sns: none;             // header 상단 sns 링크 (사용:b
 $site-config-header-member: none;   // header 상단 로그인 등 회원관련 (사용:inline-block, 사용안함:none)
 $site-config-header-language: inline-block; // header 상단 다국어 (사용:inline-block, 사용안함:none)
 $site-config-footer-logo: block;            // footer 로고 (사용:block, 사용안함:none)
-$site-config-footer-family-site: none;     // footer family site (사용:block, 사용안함:none)
+$site-config-footer-family-site: block;     // footer family site (사용:block, 사용안함:none)
 
 // input, textarea, select
 $input-placeholder-color: #b1b1b1;           // input, textarea의 placeholder 글자색
@@ -259,14 +259,14 @@ $sns-link-footer-color-kakao: $sns-link-footer-color;                   // 아�
 $sns-link-footer-color-kakao-hover: $sns-link-footer-color-hover;       // hover 아이콘 색 (sns마다 색상을 개별 지정하려면 변수 대신 색상코드 지정할것)
 
 // footer
-$footer-bg: #121212;
-$footer-address-color: #ababab;     // 주소, Copyright 글자색
-$footer-link-color: #fff;           // ex) 이용약관/개인정보보호정책 등 링크 글자색
-$footer-link-color-hover: rgba(255, 255, 255, 0.7);
-$footer-familysite-color: #adb2bc;  // familysite 글자색
-$footer-familysite-bg-hover: #333;  // familysite hover 배경색, familysite border 색
-$footer-familysite-bg-on: #232323;  // familysite 클릭시 배경색
-$footer-familysite-link-color: #333;// familysite 2depth 글자색
+$footer-bg: #fff;
+$footer-address-color: rgba(21, 21, 21, 0.8);     // 주소, Copyright 글자색
+$footer-link-color: rgba(21, 21, 21, 0.8);           // ex) 이용약관/개인정보보호정책 등 링크 글자색
+$footer-link-color-hover: $color-base;
+$footer-familysite-color: rgba(21, 21, 21, 0.8);  // familysite 글자색
+$footer-familysite-bg-hover: #f9f9f9;  // familysite hover 배경색, familysite border 색
+$footer-familysite-bg-on: #f9f9f9;  // familysite 클릭시 배경색
+$footer-familysite-link-color: rgba(21, 21, 21, 0.8);// familysite 2depth 글자색
 $footer-familysite-link-bg: #fff;   // familysite 2depth 배경색
 $footer-familysite-link-bg-hover: #f7f7f7; // familysite 2depth hover 배경색
-$footer-familysite-link-bor-color: #afafaf; // familysite 2depth border 색
+$footer-familysite-link-bor-color: #dedede; // familysite 2depth border 색

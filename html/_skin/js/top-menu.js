@@ -118,7 +118,7 @@ $(function () {
 
   /* footer family site */
   $(function () {
-    $('.familySite h3 a').on('click', function (e) {
+    $('.familySite__head button').on('click', function (e) {
       e.preventDefault();
       if ($('.familySite').hasClass('on')) {
         $('.familySite').removeClass('on');
