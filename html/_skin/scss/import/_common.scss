@@ -684,6 +684,14 @@ body.gnb-open {
   @include xl-min {
     .gnb__nav > ul > li > a {
       line-height: 142px;
+
+      &:after {
+        bottom: 32px;
+      }
+    }
+
+    .gnb__nav > ul > li:hover > a:after {
+      bottom: 38px;
     }
 
     .gnb__nav .depth2 {
@@ -1352,7 +1360,7 @@ html {
               position: absolute;
               left: 50%;
               margin-left: -3.2em;
-              bottom: 32px;
+              bottom: 30px;
               width: 6.4em;
               height: 2px;
               background-color: $color-base;
@@ -1379,7 +1387,7 @@ html {
             color: $header-pc-1depth-color-hover;
 
             &:after {
-              bottom: 38px;
+              bottom: 26px;
               opacity: 1;
             }
           }
@@ -1389,7 +1397,7 @@ html {
       .depth2 {
         display: none !important;
         position: absolute;
-        top: calc(#{$header-pc-height} - 34px);
+        top: calc(#{$header-pc-height} - 22px);
         left: 50%;
         z-index: 0;
         margin-left: -115px;
