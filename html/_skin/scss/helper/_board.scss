@@ -43,62 +43,146 @@
 
 /*----- board search */
 .board-search-wrap--fc {
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
+  text-align: center;
+  margin-bottom: 0;
 
-  > form {
-    text-align: right;
+  > form,
+  > .board_list_total--fc {
+    float: inherit;
+  }
+
+  .board_list_total--fc {
+    text-align: left;
+    @include fz(18, pre);
+    font-weight: 300;
+    color: $font-color-base;
+    margin-bottom: 1rem;
+    line-height: normal;
+  }
+
+  .search-total-num__accent--fc {
+    color: $color-base;
+    font-weight: 700;
+  }
+
+  form {
+    padding: 2rem 1.25rem;
+    margin-bottom: 2.5rem;
+    background-color: #f7f7f7;
+    border-radius: 0.625rem;
+  }
+
+  fieldset {
+    display: block;
+    max-width: calc(1148px + (0.625rem * 2));
+    margin: 0 auto;
   }
 
   input[type='text'],
   select {
-    border-color: #ddd;
-    height: 3rem;
-  }
-
-  select {
-    padding: 0 1rem;
+    @include fz(18, pre);
+    border: solid 1px #fff;
+    border-radius: 10px;
+    padding-left: 1em;
   }
 
   input[type='text'] {
-    padding-right: 3rem;
+    width: 100%;
+    padding-right: 10px;
   }
 
-  a {
-    right: 0;
-    padding-right: 3rem;
-    background-image: url('/html/_skin/img/common/ico_search_btn.png');
-    background-size: 33.333%;
+  select {
+    padding-right: 2rem;
+    background-image: url(/html/_skin/img/common/ico_search_select.png);
+    background-size: 0.9375rem;
+  }
+
+  .search-input-wrap--fc,
+  .search-input-wrap--fc > a {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .search-input-wrap--fc > a {
+    position: relative;
+    @include fz(18);
+    background-color: $color-base;
+    text-indent: -99999999px;
+    background-image: url(/html/_skin/img/common/ico_search_btn.png);
+    background-repeat: no-repeat;
+    background-size: 17%;
+    @include transition(background-color 0.3s ease-in-out);
+  }
+
+  p.search-input-wrap--fc {
+    @include d-inline-flex;
   }
 }
 
 @include md-min {
   .board-search-wrap--fc {
+    .board_list_total--fc {
+      margin-bottom: 2.5rem;
+    }
+
+    form {
+      margin-bottom: 5rem;
+    }
+
+    input[type='text'],
+    select,
+    .search-input-wrap--fc > a {
+      height: 48px;
+      border-color: #f7f7f7;
+    }
+
     p {
-      margin: 0 5px;
+      padding: 0 0.625rem;
+      margin: 0;
 
       &.search-select-wrap--fc {
-        width: 160px;
+        width: 190px;
       }
 
       &.search-input-wrap--fc {
-        width: 360px;
-
-        input[type='text'] {
-          width: 100%;
-        }
+        width: calc(100% - 190px);
       }
+    }
+
+    .search-input-wrap--fc > a {
+      width: auto;
+      line-height: 48px;
+      margin-left: 1.25rem;
+      min-width: 6.944em;
+      padding: 0 1em;
+      background-size: 17%;
+      border-radius: 60px;
     }
   }
 }
 
-/*----- total */
-.board-search-wrap--fc > .board_list_total--fc {
-  padding-top: 2rem;
-  line-height: 1;
-  color: rgba(102, 102, 102, 0.7);
+@include xl-min {
+  .board-search-wrap--fc .search-input-wrap--fc > a:hover {
+    background-color: $color-point;
+  }
+}
 
-  .search-total-num__accent--fc {}
+@include md-max {
+  .board-search-wrap--fc {
+    .search-input-wrap--fc {
+      input[type='text'] {
+        padding-right: 38px;
+      }
+    }
+
+    .search-input-wrap--fc > a {
+      position: absolute;
+      right: 0;
+      width: 38px;
+      font-size: 0;
+      border-radius: 10px;
+    }
+  }
 }
 
 /*----- 카테고리 */

@@ -489,8 +489,8 @@
 }
 
 @mixin fz($fonts-size: $font-size-base, $font-family: normal) {
-  @if($font-family ==mont) {
-    // font-family: $font-mont;
+  @if($font-family ==pre) {
+    font-family: $font-pretendard;
   }
 
   @if $fonts-size ==70 {

@@ -10,6 +10,7 @@ $wrapper-bg-color: #fff;    // wrapper 배경색 (사이트 배경색)
 
 // font
 $font-noto: 'Noto Sans KR', sans-serif;
+$font-pretendard: 'Pretendard', sans-serif;
 $font-family-base: 'Nanum Square Neo', sans-serif;
 
 // size
@@ -24,7 +25,7 @@ $site-config-footer-logo: block;            // footer 로고 (사용:block, 사�
 $site-config-footer-family-site: block;     // footer family site (사용:block, 사용안함:none)
 
 // input, textarea, select
-$input-placeholder-color: #b1b1b1;           // input, textarea의 placeholder 글자색
+$input-placeholder-color: rgba(21, 21, 21, 0.4);           // input, textarea의 placeholder 글자색
 $input-placeholder-color-focus: transparent; // input, textarea의 focus일때 placeholder 글자색
 $input-bg-color: #fff;                       // input, textarea, select의 배경색
 $input-bor-color: #ccd0d7;                   // input, textarea, select의 border색
