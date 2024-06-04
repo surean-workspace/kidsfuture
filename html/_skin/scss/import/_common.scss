@@ -268,13 +268,13 @@ input {
         display: inline-block;
         position: absolute;
         left: 0;
-        top: 3px;
+        top: 1px;
         width: 20px;
         height: 20px;
         color: $input-checkbox-color-checked;
         background: $input-checkbox-bg-color;
         border: 1px solid $input-checkbox-bor-color;
-        border-radius: 0;
+        border-radius: 5px;
         content: "";
         @include transition(all .3s ease);
       }

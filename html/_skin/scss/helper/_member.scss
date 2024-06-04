@@ -1,0 +1,30 @@
+.member-wrap--fc {
+  margin-top: 8.875rem;
+}
+
+.member__head--fc {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.member__title--fc {
+  @include fz(35);
+  color: #111;
+  font-weight: 800;
+}
+
+.member-wrap--fc .join-btn-wrap--fc ul li a {
+  padding-top: 1.35rem;
+  padding-bottom: 1.35rem;
+  font-weight: 800;
+}
+
+// 회원가입
+.member-wrap--fc .form-table--fc {
+  .join-form-area--fc {
+    select {
+      width: 100%;
+      max-width: 430px;
+    }
+  }
+}

@@ -28,15 +28,15 @@ $site-config-footer-family-site: block;     // footer family site (사용:block,
 $input-placeholder-color: rgba(21, 21, 21, 0.4);           // input, textarea의 placeholder 글자색
 $input-placeholder-color-focus: transparent; // input, textarea의 focus일때 placeholder 글자색
 $input-bg-color: #fff;                       // input, textarea, select의 배경색
-$input-bor-color: #ccd0d7;                   // input, textarea, select의 border색
+$input-bor-color: #dedede;                   // input, textarea, select의 border색
 $input-bor-color-focus: $color-base;         // input, textarea, select의 focus일때 border색
-$input-color: #414141;                       // input, textarea, select의 글자색
+$input-color: #151515;                       // input, textarea, select의 글자색
 
 // input[checkbox, radio]
 $input-checkbox-bg-color: #fff;                 // 배경색
 $input-checkbox-bor-color: #bebebe;             // border색
-$input-checkbox-bg-color-checked: $color-base;  // 체크 했을때 배경색
-$input-checkbox-bor-color-checked: $color-base; // 체크 했을때 border색
+$input-checkbox-bg-color-checked: $color-point;  // 체크 했을때 배경색
+$input-checkbox-bor-color-checked: $color-point; // 체크 했을때 border색
 $input-checkbox-color-checked: #fff;            // 체크표시 아이콘 글자색(v표시)
 $input-checkbox-label-color: #666;              // 라벨 글자색
 
