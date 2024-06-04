@@ -80,8 +80,10 @@
 }
 
 @mixin bp-hover {
+  $parent: #{if(&, '&', '')};
+
   @media (hover: hover) and (pointer: fine) and (min-width: #{$breakpoint-lg + 0.1px}) {
-    &:hover {
+    #{$parent}:hover {
       @content;
     }
   }
@@ -89,11 +91,12 @@
   @media (max-width: #{$breakpoint-lg}) {
 
     // &:focus,
-    &:active {
+    #{$parent}:active {
       @content;
     }
   }
 }
+
 
 // variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 #contents의 padding-top 변경
 @mixin contents-pc-padding-top($site-config-header-top) {
@@ -513,6 +516,15 @@
     }
   }
 
+  @else if $fonts-size ==26 {
+    font-size: add-px-unit($fonts-size);
+    font-size: rem(26);
+
+    @include xl-max {
+      font-size: 22px;
+      font-size: rem(22);
+    }
+  }
   @else if $fonts-size ==22 {
     font-size: add-px-unit($fonts-size);
     font-size: rem(22);
