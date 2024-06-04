@@ -32,7 +32,7 @@ $(function () {
   } else {
     _pathname = _pathname[2];
   }
-  $('#header .gnb__nav > li > a').each(function () {
+  $('#header .gnb__nav .gnb-menu--fc > li > a').each(function () {
     var _href = $(this).attr('href');
     if (_href.indexOf(_pathname) != -1) $(this).addClass('current');
   });

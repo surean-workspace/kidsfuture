@@ -248,6 +248,22 @@
 .board-wrap--fc .board-paging,
 .products--fc .board-paging,
 .form--fc .board-paging {
+  .paging-btn-next {
+    background: url('/html/_skin/img/common/paging-next-off.png') no-repeat center center;
+  }
+
+  .paging-btn-last {
+    background: url('/html/_skin/img/common/paging-last-off.png') no-repeat center center;
+  }
+
+  .paging-btn-first {
+    background: url('/html/_skin/img/common/paging-first-off.png') no-repeat center center;
+  }
+
+  .paging-btn-prev {
+    background: url('/html/_skin/img/common/paging-prev-off.png') no-repeat center center;
+  }
+
   > ol {
     margin-left: 18px;
     margin-right: 18px;
@@ -255,14 +271,15 @@
 
   > a,
   li > a {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border: 1px solid transparent;
     margin: 0 2px;
-    line-height: calc(2rem - 2px);
+    line-height: calc(2.5rem - 2px);
     transition-property: background-color;
     border-radius: 50%;
     color: #111;
+    @include fz(15);
   }
 
   li {
@@ -287,12 +304,15 @@
 
 .products--fc .board-paging,
 .board-wrap--fc .board-paging {
-  margin-top: 3.25rem;
+  margin-top: 3.875rem;
 }
 
 /*----- 일반 게시판 */
 .basic-board-list--fc,
 .webzine-board-list--fc {
+  border-top-width: 1px;
+  border-top-color: #151515;
+
   tbody tr.no-data--fc td {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -300,7 +320,9 @@
 
   thead {
     th {
-      height: 3.25rem;
+      height: 4.75rem;
+      font-weight: 700;
+      @include fz(18, pre);
 
       &:before {
         display: none;
@@ -308,9 +330,43 @@
     }
   }
 
+  td {
+    @include fz(18);
+  }
+
+  tbody td.board-subject--fc a {
+    color: rgba($color: $font-color-base, $alpha: 0.9);
+
+    @include bp-hover {
+      color: $td-link-color-hover;
+    }
+  }
+
   @include md-min {
     td {
-      height: 3.25rem;
+      height: 4.75rem;
+    }
+  }
+
+  @include md-max {
+    tbody tr:first-child {
+      border-top: 0;
+    }
+
+    tbody tr {
+      border-top-color: $td-bor-color;
+      padding: 15px 20px;
+    }
+
+    tbody td {
+      margin: 0.3em 0 0;
+    }
+
+    tr.no-data--fc {
+      td {
+        float: inherit;
+        width: 100%;
+      }
     }
   }
 }

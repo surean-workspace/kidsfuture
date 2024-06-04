@@ -1371,6 +1371,10 @@ html {
               @include transition();
             }
 
+            &.current {
+              color: $color-base;
+            }
+
             /* &.current {
 							color: $color-base;
 
