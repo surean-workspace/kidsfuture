@@ -103,7 +103,61 @@
 
 /*----- 카테고리 */
 .board-wrap--fc .category-tab--fc {
-  margin-bottom: 3rem;
+  margin: 0 0 3rem;
+
+  ul {
+    border: 0;
+    @include d-flex-wrap;
+
+    li {
+      -ms-flex: 1;
+      flex: 1;
+      margin: 0;
+    }
+
+    li a {
+      @include flex-align-center;
+      height: 100%;
+      padding: 1.45rem 1rem;
+      @include fz(18);
+      font-weight: 800;
+      color: rgba($color: $font-color-base, $alpha: 0.6);
+      border-radius: 50px;
+      background-color: #f7f7f7;
+      @include transition;
+      line-height: 1.2;
+
+      @include bp-hover {
+        background-color: rgba($color: $color-base, $alpha: 0.05);
+        box-shadow: 3.5px -3.5px 46px 0 rgba($color: #dedede, $alpha: 0.1);
+      }
+    }
+
+    li.on {
+      a {
+        background-color: $color-point;
+        color: #fff;
+      }
+
+      a:before {
+        display: none;
+      }
+    }
+  }
+
+  @include md-max {
+    ul {
+      li {
+        -ms-flex: auto;
+        flex: auto;
+      }
+
+      li a {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
+  }
 }
 
 /*----- 페이징 */
@@ -247,6 +301,159 @@
           max-width: none;
         }
       }
+    }
+  }
+}
+
+/* faq */
+.faq-wrap--fc {
+  border-left: 0;
+  border-right: 0;
+
+  .board-category--fc {
+    display: block;
+    margin-right: 0.5rem;
+  }
+
+  .category {
+    flex-shrink: 0;
+    border-radius: 50px;
+    border: 1px solid $color-base;
+    font-size: 0.9473em;
+    font-weight: 600;
+    padding: 0.25em 0.7em;
+    color: $color-base;
+  }
+
+  .f-btn--fc {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: 0.875rem * -0.5;
+    right: 1.875rem;
+    width: 2rem;
+    height: 0.875rem;
+  }
+
+  .f-btn--fc:before,
+  .f-btn--fc:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(50% + 2px);
+    top: 50%;
+    margin-top: -0.5px;
+    border-bottom: 1px solid $faq-arrow-color;
+  }
+
+  .f-btn--fc:before {
+    left: 0;
+    @include transform(rotate(40deg));
+  }
+
+  .f-btn--fc:after {
+    right: 0;
+    @include transform(rotate(-40deg));
+  }
+
+  .f-wrap--fc.on .f-btn--fc {
+    @include transform(scale(-1));
+  }
+
+  .faq-list--fc {}
+
+  .f-wrap--fc a,
+  .q-wrap--fc p {
+    @include fz(18);
+    padding-top: 2.125rem;
+    padding-bottom: 2.125rem;
+  }
+
+  .f-wrap--fc a {
+    @include d-flex;
+    padding-left: 6.25rem;
+    padding-right: 2.875rem;
+
+    @include bp-hover {
+      background-color: $faq-a-bg;
+    }
+  }
+
+  .f-wrap--fc a:after {
+    display: none;
+  }
+
+  .f-wrap--fc a:before,
+  .q-wrap--fc p:before {
+    top: 1.4rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    line-height: 3.125rem;
+    border-radius: 50%;
+    // @include fz(22);
+    font-size: 1.375rem;
+    font-weight: 700;
+  }
+
+  .f-wrap--fc a:before {
+    background-color: #000;
+  }
+
+  .f-wrap--fc.on a:before {
+    content: "Q";
+  }
+
+  .q-wrap--fc p {
+    padding-left: 9.5rem;
+  }
+
+  .q-wrap--fc p:before {
+    content: "A";
+    left: 5.125rem;
+    background-color: $color-point;
+  }
+
+  .q-wrap__title {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: $font-color-base;
+
+    img {
+      display: none;
+    }
+  }
+
+  @include md-max {
+    .f-wrap--fc a {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+
+    .f-wrap--fc a,
+    .q-wrap--fc p {
+      padding-left: 3.5rem;
+    }
+
+    .f-wrap--fc a {
+      padding-right: 2.5rem;
+    }
+
+    .f-wrap--fc a:before,
+    .q-wrap--fc p:before {
+      left: 10px;
+      top: 1.875rem;
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+      @include fz();
+    }
+
+    .f-btn--fc {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-top: 1rem * -0.5;
+      right: 1.25rem;
     }
   }
 }

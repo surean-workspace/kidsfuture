@@ -101,7 +101,7 @@
   max-width: 2560px;
   margin: 0 auto;
   overflow: hidden;
-  letter-spacing: -.5px;
+  letter-spacing: -.03em;
 }
 
 .inner {
@@ -460,35 +460,38 @@ body.gnb-open {
 
 @include xl-min {
   #contents {
-    min-height: calc(100vh - 255px);
+    // min-height: calc(100vh - 255px);
+    min-height: calc(100vh - #{$header-pc-height});
   }
 
-  #header.fixed ~ #contents {
+  /* #header.fixed ~ #contents {
     min-height: calc(100vh - 255px + #{$contents-pc-padding-top});
     @include contents-pc-padding-top($site-config-header-top);
-  }
+  } */
 }
 
 @include xl-max {
   #contents {
-    min-height: calc(100vh - 255px);
+    // min-height: calc(100vh - 255px);
+    min-height: calc(100vh - #{$header-tablet-height});
   }
 
-  #header.fixed ~ #contents {
+  /* #header.fixed ~ #contents {
     min-height: calc(100vh - 255px + #{$contents-tablet-padding-top});
     @include contents-tablet-padding-top($site-config-header-top);
-  }
+  } */
 }
 
 @include md-max {
   #contents {
-    min-height: calc(100vh - 288px);
+    // min-height: calc(100vh - 288px);
+    min-height: calc(100vh - #{$header-mobile-height});
   }
 
-  #header.fixed ~ #contents {
+  /* #header.fixed ~ #contents {
     min-height: calc(100vh - 288px + #{$contents-mobile-padding-top});
     @include contents-mobile-padding-top($site-config-header-top);
-  }
+  } */
 }
 
 .top-btn {

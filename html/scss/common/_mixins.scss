@@ -4,7 +4,6 @@
 // md: 767
 // lg: 991
 // xl: 1199
-
 @mixin bp-max($breakpoint) {
   @media (max-width: $breakpoint) {
     @content;
@@ -98,50 +97,54 @@
 
 // variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 #contents의 padding-top 변경
 @mixin contents-pc-padding-top($site-config-header-top) {
-	@if $site-config-header-top == block {
-		padding-top: $contents-pc-padding-top; // header 상단 높이 + .header-bottom 높이
-	}
-	@else if $site-config-header-top == none {
-		padding-top: $header-pc-height; // .header-bottom 높이
-	}
+  @if $site-config-header-top ==block {
+    padding-top: $contents-pc-padding-top; // header 상단 높이 + .header-bottom 높이
+  }
+
+  @else if $site-config-header-top ==none {
+    padding-top: $header-pc-height; // .header-bottom 높이
+  }
 }
+
 @mixin contents-tablet-padding-top($site-config-header-top) {
-	@if $site-config-header-top == block {
-		padding-top: $contents-tablet-padding-top; // header 상단 높이 + .header-bottom 높이
-	}
-	@else if $site-config-header-top == none {
-		padding-top: $header-tablet-height; // .header-bottom 높이
-	}
+  @if $site-config-header-top ==block {
+    padding-top: $contents-tablet-padding-top; // header 상단 높이 + .header-bottom 높이
+  }
+
+  @else if $site-config-header-top ==none {
+    padding-top: $header-tablet-height; // .header-bottom 높이
+  }
 }
+
 @mixin contents-mobile-padding-top($site-config-header-top) {
-	@if $site-config-header-top == block {
-		padding-top: $contents-mobile-padding-top; // header 상단 높이 + .header-bottom 높이
-	}
-	@else if $site-config-header-top == none {
-		padding-top: $header-mobile-height; // .header-bottom 높이
-	}
+  @if $site-config-header-top ==block {
+    padding-top: $contents-mobile-padding-top; // header 상단 높이 + .header-bottom 높이
+  }
+
+  @else if $site-config-header-top ==none {
+    padding-top: $header-mobile-height; // .header-bottom 높이
+  }
 }
 
 // variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 header 상단 높이 0처리
 @mixin sta-height-zero($site-config-header-top) {
-	@if $site-config-header-top == none {
-		height: 0 !important;
-	}
+  @if $site-config-header-top ==none {
+    height: 0 !important;
+  }
 }
+
 // variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 header.fixed top 0으로 고정
 @mixin header-fixed-top-zero($site-config-header-top) {
-	@if $site-config-header-top == none {
-		top: 0 !important;
-	}
+  @if $site-config-header-top ==none {
+    top: 0 !important;
+  }
 }
 
 @mixin transition($time: .2s all ease-in-out) {
-	@each $prefix in -moz-, -o-, -webkit-, '' {
-		#{$prefix}transition: $time;
-	}
+  @each $prefix in -moz-, -o-, -webkit-, '' {
+    #{$prefix}transition: $time;
+  }
 }
-
-
 
 // custom
 // rem으로 변환
@@ -184,6 +187,11 @@
 }
 
 @mixin d-inline-flex {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@mixin d-inline-flex-wrap {
   display: -ms-inline-flexbox;
   display: inline-flex;
   flex-wrap: wrap;
@@ -492,6 +500,26 @@
     @include xl-max {
       font-size: 56px;
       font-size: rem(56);
+    }
+  }
+
+  @else if $fonts-size ==60 {
+    font-size: add-px-unit($fonts-size);
+    font-size: rem(60);
+
+    @include xl-max {
+      font-size: 42px;
+      font-size: rem(42);
+    }
+  }
+
+  @else if $fonts-size ==22 {
+    font-size: add-px-unit($fonts-size);
+    font-size: rem(22);
+
+    @include xl-max {
+      font-size: 18px;
+      font-size: rem(18);
     }
   }
 

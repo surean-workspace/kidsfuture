@@ -82,17 +82,17 @@ $view-btn-right-bg: #464646;   // 목록 버튼 배경색
 $view-btn-right-color: #fff;   // 목록 버튼 글자색
 
 // board - faq 아코디언
-$faq-q-bg: #f7f7f7;                // 질문 배경색
+$faq-q-bg: #fff;                // 질문 배경색
 $faq-q-bg-hover: #efefef;          // 질문 hover 배경색
-$faq-q-color: #333;                // 질문 글자색
-$faq-q-icon-color: #818181;        // 질문 아이콘(Q.) 글자색
-$faq-q-icon-color-on: $color-base; // 질문 on일때 아이콘(Q.) 글자색
-$faq-a-bg: #fff;                   // 답변 배경색
-$faq-a-color: #444;                // 답변 글자색
-$faq-a-icon-color: $color-point;   // 답변 아이콘(A.) 글자색 (on에서만 보이므로 따로 on일때를 구분하지 않음)
-$faq-arrow-color: #999;            // 우측 화살표 아이콘 글자색
-$faq-arrow-color-on: #111;         // 질문 on일때 우측 화살표 아이콘 글자색
-$faq-bor-color: #d7d7d7;           // border색
+$faq-q-color: #151515;                // 질문 글자색
+$faq-q-icon-color: #fff;        // 질문 아이콘(Q.) 글자색
+$faq-q-icon-color-on: #fff; // 질문 on일때 아이콘(Q.) 글자색
+$faq-a-bg: #f7f7f7;                   // 답변 배경색
+$faq-a-color: rgba(21, 21, 21, 0.8);;                // 답변 글자색
+$faq-a-icon-color: #fff;   // 답변 아이콘(A.) 글자색 (on에서만 보이므로 따로 on일때를 구분하지 않음)
+$faq-arrow-color: #8e8e8e;            // 우측 화살표 아이콘 글자색
+$faq-arrow-color-on: #8e8e8e;         // 질문 on일때 우측 화살표 아이콘 글자색
+$faq-bor-color: #dedede;           // border색
 
 // Breakpoints
 $breakpoint-sm: 575.9px;
@@ -109,8 +109,8 @@ $main-tablet-visual-height: 955px;                  // 메인 비주얼 슬라�
 $main-mobile-visual-height: 520px; // 메인 비주얼 슬라이드 모바일 높이 (84px은 header 높이)
 
 // sub visual
-$sub-pc-visual-height: 280px;     // 서브 비주얼 PC 높이 (디자인 이미지 사이즈에 맞게 수정)
-$sub-tablet-visual-height: 270px; // 서브 비주얼 태블릿 높이
+$sub-pc-visual-height: 448px;     // 서브 비주얼 PC 높이 (디자인 이미지 사이즈에 맞게 수정)
+$sub-tablet-visual-height: 400px; // 서브 비주얼 태블릿 높이
 $sub-mobile-visual-height: 200px; // 서브 비주얼 모바일 높이
 
 // header (pc)
