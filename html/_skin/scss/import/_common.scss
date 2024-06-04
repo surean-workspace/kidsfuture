@@ -458,6 +458,17 @@ body.gnb-open {
   width: 100%;
 }
 
+#sub {
+  #contents {
+    @include d-flex;
+    flex-direction: column;
+  }
+
+  .f_common_obj {
+    margin-top: auto;
+  }
+}
+
 @include xl-min {
   #contents {
     // min-height: calc(100vh - 255px);
