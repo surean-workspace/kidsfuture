@@ -1,0 +1,258 @@
+/* 사업소개 */
+.about-spot {
+  .obj {
+    position: absolute;
+    display: inline-block;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  .obj-1 {
+    z-index: 2;
+    top: 0;
+    left: -20px;
+    height: 30%;
+    max-height: 8rem;
+
+    img {
+      // width: 13.125rem;
+    }
+  }
+
+  .obj-2 {
+    right: -20px;
+    bottom: 0;
+    height: 30%;
+    max-height: 5rem;
+
+    img {
+      // width: 10.312rem;
+    }
+  }
+
+  .col-img {
+    text-align: center;
+  }
+
+  .col-img .box {
+    position: relative;
+    display: inline-block;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .col-word {
+    .words-tit {
+      @include fz(40);
+      color: #1a1a18;
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+
+    .words-desc {
+      max-width: 534px;
+      @include fz(18);
+      line-height: 1.89;
+      color: rgba($color: $font-color-base, $alpha: 0.8);
+    }
+
+    p + p {
+      margin-top: 1.7em;
+    }
+  }
+
+  .about-spot__thumb {
+    .thumb__img {
+      @include overflow-hidden;
+      border-radius: 0.625rem 2.5rem;
+    }
+  }
+
+  @include md-min {
+    @include d-flex-wrap;
+
+    .col-spot {
+      width: 50%;
+      padding-top: 0;
+    }
+
+    .col-spot .box {
+      padding-bottom: 3.75rem;
+    }
+
+    .obj {
+      max-height: none;
+    }
+
+    .obj-1 {
+      top: 15.92%;
+      width: 30%;
+      left: -11%;
+      height: auto;
+    }
+
+    .obj-2 {
+      right: -2.6rem;
+      width: 23.57%;
+      height: auto;
+    }
+
+    .col-img {
+      padding-left: 7.5%;
+      padding-right: 3.92%;
+      margin-left: -7.5%;
+    }
+
+    .col-img .box {
+      padding-top: 0;
+    }
+
+    .col-word {
+      @include d-flex-wrap;
+      align-self: center;
+    }
+  }
+
+  @include bp-min($inner-max-width + 150px) {
+    .obj-1 {
+      left: -15%;
+    }
+  }
+}
+
+.section-vision {
+  position: relative;
+  text-align: center;
+  background-color: #cbf0fd;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+  .quotes-l,
+  .quotes-r {
+    width: 0.56em;
+    height: 0.56em;
+  }
+
+  .vision-logos {
+    padding-top: 6rem;
+    margin-bottom: 3rem;
+
+    img {
+      width: 20rem;
+    }
+  }
+
+  .vision-words {
+    @include fz(30);
+    line-height: 1.6;
+  }
+
+  .vision-spot img {
+    width: 100%;
+  }
+}
+
+.section-intro {
+  .intro-article {
+    @include d-flex-wrap;
+  }
+
+  .intro-article + .intro-article {
+    border-top: 2px dashed #dedede;
+    margin-top: 3rem;
+    padding-top: 3rem;
+  }
+
+  .card-list {
+    > li {
+      margin-bottom: 10px;
+    }
+
+    .card {
+      height: 100%;
+      padding: 2.5rem;
+      border-radius: 1.25rem;
+      background-color: #eafaff;
+    }
+
+    .card__dfn {
+      > dt {
+        @include fz(24);
+        font-weight: 800;
+        color: #1a1a18;
+        border-bottom: 1px solid rgba($color: #acdbea, $alpha: 0.45);
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+
+      > dd {
+        @include fz(18);
+        line-height: 1.89;
+        color: rgba($color: $font-color-base, $alpha: 0.8);
+        @include item-dot(#acdbea, 0.55em);
+      }
+    }
+  }
+
+  .intro-article__ico {
+    width: 2.5rem;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .bg_point img {
+    background-color: $color-point;
+  }
+
+  .bg_base img {
+    background-color: $color-base;
+  }
+
+  .intro-article__words {
+    width: calc(100% - 2.5rem);
+    padding-left: 1rem;
+    color: rgba($color: $font-color-base, $alpha: 0.8);
+    line-height: 1.89;
+
+    .words-tit {
+      @include fz(40);
+      line-height: normal;
+      color: #1a1a18;
+      font-weight: 800;
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  @include sm-min {
+    .intro-article + .intro-article {
+      margin-top: 5rem;
+      padding-top: 5rem;
+    }
+
+    .intro-article__ico {
+      width: 11.11%;
+    }
+
+    .intro-article__words {
+      width: 88.89%;
+      padding-left: 3.5%;
+
+      .words-tit {
+        margin-top: 0.3em;
+      }
+    }
+  }
+
+  @include bp-min($inner-max-width ) {
+    .card-list {
+      @include colspace(26px);
+    }
+  }
+}
+
+
+

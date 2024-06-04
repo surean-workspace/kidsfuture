@@ -34,7 +34,7 @@ img {
   /* chrome(비표준) */
   backface-visibility: hidden;
   -webkit-perspective: 1;
-} 
+}
 
 /* include */
 .inc-video {
@@ -81,12 +81,8 @@ ul.list-dot > li {
   }
 }
 
-.list-bar {
-  @include item-bar(#000, 4px);
-
-  > li {
-    padding-left: 10px;
-  }
+.list-bar > li {
+  @include item-bar(#000);
 }
 
 .list-num {
@@ -311,4 +307,24 @@ mark,
 
 .swiper-container {
   @include swiper;
+}
+
+.quotes-l,
+.quotes-r {
+  @include d-inline-flex;
+  background: no-repeat center/contain;
+  color: transparent;
+  text-indent: -99999px;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+}
+
+.quotes-l {
+  background-image: url(/html/_skin/img/sub/about/img_quotes_left.png);
+}
+
+.quotes-r {
+  background-image: url(/html/_skin/img/sub/about/img_quotes_right.png);
+  align-items: self-end;
+  margin-bottom: 0.3em;
 }

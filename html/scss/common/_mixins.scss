@@ -412,20 +412,22 @@
   }
 }
 
-@mixin item-bar($bg-color, $width, $marginTop: 0.8em) {
+@mixin item-bar($bg-color: inherit, $marginTop: 0) {
   position: relative;
-  padding-left: calc(#{$width} + 0.5rem);
+  // padding-left: calc(#{$width} + 0.5rem);
+  padding-left: 1em;
 
   &:before {
-    content: '';
+    content: '-';
     display: inline-block;
     position: absolute;
     left: 0;
     top: 0;
     margin-top: $marginTop;
-    width: $width;
-    height: 1px;
-    background-color: $bg-color;
+    color: $bg-color;
+    // width: $width;
+    // height: 1px;
+    // background-color: $bg-color;
   }
 }
 
@@ -515,6 +517,26 @@
     }
   }
 
+  @else if $fonts-size ==50 {
+    font-size: add-px-unit($fonts-size);
+    font-size: rem(50);
+
+    @include xl-max {
+      font-size: 36px;
+      font-size: rem(36);
+    }
+  }
+
+  @else if $fonts-size ==40 {
+    font-size: add-px-unit($fonts-size);
+    font-size: rem(40);
+
+    @include xl-max {
+      font-size: 30px;
+      font-size: rem(30);
+    }
+  }
+
   @else if $fonts-size ==35 {
     font-size: add-px-unit($fonts-size);
     font-size: rem(35);
@@ -525,6 +547,16 @@
     }
   }
 
+  @else if $fonts-size ==30 {
+    font-size: add-px-unit($fonts-size);
+    font-size: rem(30);
+
+    @include xl-max {
+      font-size: 24px;
+      font-size: rem(24);
+    }
+  }
+
   @else if $fonts-size ==26 {
     font-size: add-px-unit($fonts-size);
     font-size: rem(26);
@@ -532,6 +564,16 @@
     @include xl-max {
       font-size: 22px;
       font-size: rem(22);
+    }
+  }
+
+  @else if $fonts-size ==24 {
+    font-size: add-px-unit($fonts-size);
+    font-size: rem(24);
+
+    @include xl-max {
+      font-size: 20px;
+      font-size: rem(20);
     }
   }
 

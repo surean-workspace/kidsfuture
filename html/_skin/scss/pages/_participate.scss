@@ -1,0 +1,60 @@
+.participate-complete--fc {
+  .participate-complete__spot {
+    @include overflow-hidden;
+    background-color: #deeef8;
+    max-width: 735px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4.625rem;
+    border-radius: 200px;
+  }
+
+  .participate-complete__detail {
+    text-align: center;
+
+    .detail-tit {
+      @include fz(50);
+      color: #1a1a18;
+      font-weight: 800;
+      margin-bottom: 2.25rem
+    }
+
+    .detail-words {
+      @include fz(18);
+      line-height: 1.89;
+      color: rgba($color: $font-color-base, $alpha: 0.8);
+    }
+
+    .btn-wrap {
+      margin-top: 3rem;
+    }
+
+    .btn-detail {
+      font-weight: 800;
+      padding-top: 1.2em;
+      padding-bottom: 1.2em;
+
+      @include bp-hover {
+        border-color: $color-base;
+        background-color: $color-base-hover;
+      }
+    }
+  }
+
+  @include sm-max {
+    .participate-complete__spot {
+      padding-top: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .participate-complete__detail {
+      .detail-tit {
+        margin-bottom: 1rem;
+      }
+
+      .btn-detail {
+        width: 100%;
+      }
+    }
+  }
+}

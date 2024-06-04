@@ -1190,3 +1190,59 @@ figure.img_full_wrap figcaption {
     }
   }
 }
+
+/* custom */
+.btn_theme {
+  @include d-inline-flex-wrap;
+  @include align-items-center;
+  border-radius: 50px;
+  @include fz(18);
+  border: 1px solid transparent;
+  padding: 0.62em 1em;
+  text-align: center;
+
+  &.t_c {
+    @include justify-content-center;
+  }
+
+  &.solid_white {
+    background-color: #fff;
+    color: #000;
+  }
+
+  &.solid_base {
+    background-color: $color-base;
+    color: #fff;
+  }
+
+  &.solid_point {
+    background-color: $color-point;
+    color: #fff;
+  }
+
+  &.solid_black {
+    background-color: #0d0d0d;
+    color: #fff;
+  }
+
+  img {
+    margin-right: 10px;
+  }
+
+  @include sm-min {
+    min-width: 9.72em;
+  }
+}
+
+.btn_theme_inline {
+  @include d-inline-flex-wrap;
+  @include align-items-center;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 0.28em 0.8em;
+  text-align: center;
+
+  img {
+    margin-right: 10px;
+  }
+}
