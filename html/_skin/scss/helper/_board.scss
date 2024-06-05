@@ -752,7 +752,6 @@
     color: #151515;
   }
 
- 
   .next-post--fc {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='15px' height='10px'%3E%3Cpath fill-rule='evenodd' fill='rgb(21, 21, 21)' d='M15.003,1.470 L8.597,8.190 L8.947,8.557 L7.570,10.001 L-0.002,2.060 L1.375,0.615 L7.191,6.716 L13.597,-0.004 L15.003,1.470 Z'/%3E%3C/svg%3E");
 
@@ -812,3 +811,216 @@
 }
 
 /*-------latest */
+.gallery-latest--fc {
+  .thumb-wrap--fc {
+    @include fit-thumb(62.04%, auto, full);
+    border-radius: 2.5rem 0.625rem;
+
+    &:before {
+      z-index: 2;
+      content: "";
+      opacity: 0;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: $color-base, $alpha: 0.5);
+      @include transition;
+    }
+  }
+
+  figcaption {
+    padding-top: 2rem;
+  }
+
+  .gallery-title--fc {
+    @include fz(24);
+    color: #1a1a18;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .gallery-date--fc {
+    display: block;
+    margin-top: 1rem;
+    @include fz(18);
+    color: rgba(26, 26, 24, 0.8);
+    line-height: 1.2;
+  }
+
+  a {
+    @include bp-hover {
+      .thumb-wrap--fc {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// basic
+.basic-board-latest--fc {
+  .basic-board-latest__row {
+    @include d-flex-wrap;
+    color: rgba($color: $font-color-base, $alpha: 0.8);
+
+    a {
+      @include fz(18);
+
+      @include bp-hover {
+        text-decoration: underline;
+      }
+    }
+
+    .col-full,
+    .col-board {
+      width: 100%;
+    }
+
+    .col-board:nth-child(2) {
+      .latest-top__date .date-box {
+        background-color: $color-point;
+      }
+    }
+  }
+
+  .latest__board-table {
+    border-top: 1px solid #151515;
+
+    > li {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #dedede;
+    }
+  }
+
+  .latest-top .flex-box {
+    @include align-items-center;
+  }
+
+  .latest-top__date {
+    font-size: 0.75rem;
+
+    .date-box {
+      @include d-flex-wrap;
+      @include justify-content-center;
+      -ms-align-content: center;
+      align-content: center;
+      width: 5rem;
+      height: 5rem;
+      text-align: center;
+      background-color: $color-base;
+      border-radius: 50%;
+    }
+
+    .dd {
+      display: block;
+      width: 100%;
+      font-size: 1.5em;
+      margin-bottom: 0.3rem;
+      color: #fff;
+    }
+
+    .yymm {
+      color: rgba($color: #fff, $alpha: 0.8);
+    }
+  }
+
+  .latest-top__cont {
+    width: calc(100% - 5rem);
+    padding-left: 4%;
+
+    .title {
+      margin-bottom: 0.875rem;
+      color: $font-color-base;
+      @include ellipsis(1, 1.2em);
+      @include fz(20);
+      font-weight: 800;
+    }
+
+    .cont {
+      @include ellipsis(2, 1.5em)
+    }
+  }
+
+  .latest-item {
+    @include d-flex-wrap;
+    @include align-items-center;
+
+    .title {
+      @include ellipsis(1, 1.2em);
+      font-weight: 800;
+      color: $font-color-base;
+    }
+
+    .td-title {
+      width: 70%;
+
+      a {
+        display: block;
+      }
+    }
+
+    .td-date {
+      width: 30%;
+      text-align: right;
+    }
+  }
+
+  @include md-min {
+    .basic-board-latest__row {
+      margin-left: -15px;
+      margin-right: -15px;
+
+      .col-full,
+      .col-board {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .col-board {
+        width: 50%;
+      }
+    }
+
+    .latest-top__date {
+      @include fz();
+      width: 7rem;
+
+      .date-box {
+        width: 7rem;
+        height: 7rem;
+      }
+
+      .dd {
+        font-size: 2.5em;
+      }
+    }
+
+    .latest-top__cont {
+      width: calc(100% - 7rem);
+    }
+  }
+
+  @include xl-min {
+    .basic-board-latest__row {
+      margin-left: -32px;
+      margin-right: -32px;
+
+      .col-full,
+      .col-board {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+    }
+  }
+
+  @include md-max {
+    .basic-board-latest__row .col-board:nth-child(2) .latest__board-table {
+      border-top: 0;
+    }
+  }
+}

@@ -109,6 +109,7 @@
 }
 
 .flex-box {
+  display: flex !important;
   @include d-flex;
 }
 

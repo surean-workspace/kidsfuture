@@ -1272,6 +1272,10 @@ figure.img_full_wrap figcaption {
 
   &.t_c {
     @include justify-content-center;
+
+    span {
+      margin-right: 0;
+    }
   }
 
   &.solid_white {
@@ -1303,9 +1307,13 @@ figure.img_full_wrap figcaption {
     margin-right: 10px;
   }
 
+  span {
+    margin-right: auto;
+  }
+
   span+img {
     margin-right: 0;
-    margin-left: auto;
+    margin-left: 2em;
   }
 
   @include sm-min {

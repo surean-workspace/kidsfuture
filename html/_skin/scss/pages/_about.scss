@@ -418,15 +418,14 @@
 
   @include md-max {
     .partner-banner--fc {
-
-      .obj-1  {
+      .obj-1 {
         display: none;
       }
     }
   }
+
   @include lg-max {
     .partner-banner--fc {
-
       .obj-3 {
         display: none;
       }
@@ -516,6 +515,7 @@
       width: calc(100% - 6rem);
       @include fz(24);
       color: #fffff3;
+      font-weight: 800;
       line-height: 1.5;
     }
 
@@ -1208,6 +1208,10 @@
       font-weight: 800;
       padding-top: 1.22em;
       padding-bottom: 1.22em;
+
+      > span {
+        margin-right: 0;
+      }
 
       @include bp-hover {
         background-color: $color-base-hover;
