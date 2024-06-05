@@ -396,7 +396,7 @@
 /* element */
 @mixin item-dot-txt($bg-color: inherit, $marginTop: 0) {
   position: relative;
-  padding-left: 1em;
+  padding-left: 0.625em;
 
   &:before {
     content: '·';
@@ -431,7 +431,7 @@
 @mixin item-bar($bg-color: inherit, $marginTop: 0) {
   position: relative;
   // padding-left: calc(#{$width} + 0.5rem);
-  padding-left: 1em;
+  padding-left: 0.625em;
 
   &:before {
     content: '-';

@@ -35,10 +35,10 @@ $input-color: #151515;                       // input, textarea, select의 글�
 // input[checkbox, radio]
 $input-checkbox-bg-color: #fff;                 // 배경색
 $input-checkbox-bor-color: #bebebe;             // border색
-$input-checkbox-bg-color-checked: $color-point;  // 체크 했을때 배경색
-$input-checkbox-bor-color-checked: $color-point; // 체크 했을때 border색
+$input-checkbox-bg-color-checked: $color-base;  // 체크 했을때 배경색
+$input-checkbox-bor-color-checked: $color-base; // 체크 했을때 border색
 $input-checkbox-color-checked: #fff;            // 체크표시 아이콘 글자색(v표시)
-$input-checkbox-label-color: #666;              // 라벨 글자색
+$input-checkbox-label-color: rgba(21, 21, 21, 0.8);              // 라벨 글자색
 
 // member - 취소(왼쪽)버튼, 가입 or 회원정보 수정(오른쪽)버튼, 회원탈퇴 버튼
 $member-btn-cancel-bg-color: #fff;                      // 왼쪽 버튼 배경색

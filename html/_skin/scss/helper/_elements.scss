@@ -73,6 +73,14 @@ dl.dd-dot {
 }
 
 /*-- list --*/
+ul.flex-list {
+  @include d-flex-wrap;
+
+  > li {
+    margin-right: 1.5em;
+  }
+}
+
 ul.list-dot > li {
   @include item-dot-txt(2px);
 }
@@ -284,6 +292,11 @@ table.t_c {
 .tb-caption {
   @include fz();
   color: #262626;
+
+  & + .table-wrap,
+  & + table {
+    margin-top: 1rem;
+  }
 }
 
 .table-wrap,

@@ -318,6 +318,340 @@
   }
 }
 
+.section-separation--layout {
+  .sub-cont-section + .sub-cont-section:not(.not-border-top) {
+    position: relative;
+    padding-top: 0;
+
+    &:before {
+      content: "";
+      display: block;
+      width: calc(100% - 40px);
+      max-width: $inner-max-width - 40px;
+      margin: 0 auto;
+      border-top: 2px dashed #dedede;
+      margin-bottom: 100px;
+    }
+  }
+
+  .section__article__box + .section__article__box {
+    margin-top: 4.375rem;
+  }
+
+  .section__article + .section__article {
+    margin-top: 5rem;
+  }
+}
+
+// lh한국토지주택공사 소개
+.lh-intro--page {
+  .value-list {
+    @include d-flex-wrap;
+    @include justify-content-around;
+    text-align: center;
+    margin-top: -6px;
+    margin-left: -6px;
+    margin-right: -6px;
+
+    > li {
+      width: 50%;
+      padding: 6px;
+    }
+
+    > li.mb-full {
+      width: 100%;
+    }
+  }
+
+  .value-circle {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .value-circle__box {
+    background-color: $color-point;
+    padding: 3rem 20px;
+    border-radius: 3rem;
+    color: #fff;
+
+    .alphabet {
+      @include fz(40);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .cont {
+      width: 100%;
+    }
+  }
+
+  .value-circle__dfn {
+    width: 100%;
+    line-height: 1.56;
+
+    > dt {
+      @include fz(18);
+      font-weight: 800;
+    }
+
+    > dd {
+      @include fz(18);
+      font-weight: 300;
+    }
+  }
+
+  .value-list .list-item:nth-child(even) .value-circle__box {
+    background-color: $color-base;
+  }
+
+  .partner-banner--fc {
+    background-image: url(/html/_skin/img/sub/about/bg_partner_banner_lh.jpg);
+
+    .obj-3 {
+      top: 0;
+      left: 50%;
+      @include transform(translateX(-50%));
+      bottom: auto;
+    }
+  }
+
+  @include md-max {
+    .partner-banner--fc {
+
+      .obj-1  {
+        display: none;
+      }
+    }
+  }
+  @include lg-max {
+    .partner-banner--fc {
+
+      .obj-3 {
+        display: none;
+      }
+    }
+  }
+
+  @include ssm-max {
+    .value-list > li {
+      width: 100%;
+      margin-bottom: 0.625rem;
+    }
+  }
+
+  @include sm-min {
+    .value-list {
+
+      > li,
+      > li.mb-full {
+        width: 33.33%;
+      }
+    }
+
+    .value-circle {
+      max-width: 14.25rem;
+    }
+
+    .value-circle__box {
+      position: relative;
+      padding: 0 20px;
+      border-radius: 50%;
+      padding-bottom: 100%;
+    }
+
+    .value-circle__box .cont {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      @include transform(translateY(-50%));
+    }
+  }
+
+  @include md-min {
+    .value-list {
+      margin-top: -8px;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 8px;
+      padding-right: 8px;
+
+      > li {
+        padding: 8px;
+      }
+    }
+  }
+
+  @include lg-min {
+    .value-list {
+
+      > li,
+      > li.mb-full {
+        width: 20%;
+      }
+    }
+  }
+}
+
+.lh-intro--page .section-01 {
+  p {
+    line-height: 1.88;
+  }
+}
+
+.lh-intro--page .section-mission {
+  .mission-list {
+    color: #fff;
+
+    .tit,
+    .txt {}
+
+    .tit {
+      width: 6rem;
+      @include fz(18);
+      color: rgba(255, 255, 243, 0.8);
+    }
+
+    .txt {
+      width: calc(100% - 6rem);
+      @include fz(24);
+      color: #fffff3;
+      line-height: 1.5;
+    }
+
+    .box {
+      @include d-flex-wrap;
+      @include align-items-center;
+      border-radius: 0.625rem;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    > li:not(:first-child) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .mission-list__arrow {
+    width: calc(100% - 10px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include sm-max {
+    .mission-list {
+
+      .tit,
+      .txt {
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .tit {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.lh-intro--page .section-value {
+  .value-tit {
+    color: $color-base;
+    @include fz(20);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+}
+
+.lh-intro--page .section-rule {
+  .rule-box {
+    border-radius: 1.875rem;
+    padding: 5.2rem 20px;
+  }
+
+  .rule-box__row {
+    @include d-flex-wrap;
+    max-width: 1034px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.125rem;
+  }
+
+  .col-small,
+  .col-big {
+    width: 100%;
+  }
+
+  .col-big {
+    margin-top: 1rem;
+  }
+
+  .rule-box__tit {
+    @include fz(18);
+    line-height: 1.39;
+    color: #fff;
+    border-radius: 60px;
+    text-align: center;
+    font-weight: 800;
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 2rem;
+    border-radius: 1.25rem;
+    box-shadow: 13.4px 13.4px 27px 0 rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+    color: rgba($color: $font-color-base, $alpha: 0.8);
+  }
+
+  .list-num-circle {
+    line-height: 1.88;
+
+    > li + li {
+      margin-top: 0.875rem;
+    }
+
+    > li:before {
+      background-color: #444;
+    }
+  }
+
+  .rule-box__row:nth-child(odd) .value-circle__box {
+    background-color: $color-base;
+  }
+
+  @include md-min {
+    .col-small {
+      width: 10rem;
+    }
+
+    .col-big {
+      width: calc(100% - 10rem);
+      padding-left: 20px;
+      margin-top: 0;
+    }
+  }
+
+  @include lg-min {
+    .col-small {
+      width: 16.25rem;
+    }
+
+    .col-big {
+      width: calc(100% - 16.25rem);
+      padding-left: 1.5rem;
+    }
+  }
+
+  @include md-max {
+    .rule-box__row.head {
+      display: none;
+    }
+  }
+}
+
+// 아이들과 미래재단 소개
 .foundation-intro--page .sub-cont-section {
   & + .sub-cont-section {
     padding-top: 0;
@@ -387,7 +721,7 @@
 
 .foundation-intro--page .section-value {
   .value-list {
-    @include d-inline-flex-wrap;
+    @include d-flex-wrap;
     @include justify-content-around;
     text-align: center;
     margin-top: -6px;
@@ -551,31 +885,8 @@
     color: #151515;
   }
 
-  .sub-cont-section + .sub-cont-section:not(.not-border-top) {
-    position: relative;
-    padding-top: 0;
-
-    &:before {
-      content: "";
-      display: block;
-      width: calc(100% - 40px);
-      max-width: $inner-max-width - 40px;
-      margin: 0 auto;
-      border-top: 2px dashed #dedede;
-      margin-bottom: 100px;
-    }
-  }
-
-  .section__article__box + .section__article__box {
-    margin-top: 4.375rem;
-  }
-
   .color_base:not(.txt--big) {
     color: rgba($color: $color-base, $alpha: 0.8) !important;
-  }
-
-  .section__article + .section__article {
-    margin-top: 5rem;
   }
 
   * ~ .table-wrap,
@@ -728,7 +1039,9 @@
       @include fz(18);
       font-weight: 800;
 
-      > span {padding-right: 1em;}
+      > span {
+        padding-right: 1em;
+      }
     }
 
     .btn-apply img {
@@ -767,6 +1080,302 @@
     .apply-banner {
       padding-left: 20px;
       padding-right: 20px;
+    }
+  }
+}
+
+// 도시락 - 신청하기
+.lunch-box-apply--page {
+  .apply-table {
+    text-align: left;
+
+    .flex-table {}
+
+    input:not([type="radio"]):not([type="checkbox"]) {
+      width: 100%;
+      border-radius: 5px;
+      height: 3rem;
+
+      &:read-only {
+        background-color: #f7f7f7;
+        border-color: $input-bor-color;
+        cursor: auto;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      height: 106px;
+    }
+
+    .flex-table__row {
+      @include d-flex-wrap;
+    }
+
+    .flex-table__item {
+      width: 50%;
+      @include d-flex;
+      border-top: 1px solid #dedede;
+    }
+
+    .flex-table__th,
+    .flex-table__td {
+      @include d-flex-wrap;
+      @include align-items-center;
+      padding: 1.25rem;
+    }
+
+    .flex-table__row:first-child .flex-table__item {
+      border-top: 0;
+    }
+
+    .flex-table__th {
+      background-color: #f7f7f7;
+      font-weight: 800;
+      color: #151515;
+      width: 156px;
+      border-right: 1px solid #dedede;
+    }
+
+    .flex-table__item + .flex-table__item .flex-table__th {
+      border-left: 1px solid #dedede;
+    }
+
+    .flex-table__td {
+      width: calc(100% - 156px);
+    }
+
+    .is_apply_selects {
+      @include d-flex;
+      text-align: left;
+
+      > li {
+        min-width: 8em;
+      }
+
+      > li:last-child {
+        width: 100%;
+      }
+    }
+
+    .check-year {
+      @include d-flex-wrap;
+
+      > li {
+        margin-right: 1rem;
+      }
+    }
+
+    .flex-box {
+      @include align-items-center;
+    }
+
+    .input_number_unit {
+      input {
+        max-width: 256px;
+      }
+    }
+
+    .unit {
+      padding-left: 1em;
+    }
+
+    .info {
+      margin-left: 1em;
+    }
+
+    .caption-box {
+      border-bottom: 1px solid #dedede;
+      padding: 1rem 1.5rem;
+      font-weight: 800;
+      color: $color-base;
+    }
+
+    .form__place--fc {
+      .tit {
+        padding-right: 1em;
+      }
+    }
+  }
+
+  .form-btns__box {
+    @include d-flex;
+    @include justify-content-between;
+
+    .btn_theme {
+      @include justify-content-center;
+      @include fz(18);
+      font-weight: 800;
+      padding-top: 1.22em;
+      padding-bottom: 1.22em;
+
+      @include bp-hover {
+        background-color: $color-base-hover;
+        color: #fff;
+      }
+    }
+
+    .btn-list {
+      margin: -10px -10px 0;
+      @include d-flex-wrap;
+
+      > li {
+        padding: 10px;
+      }
+    }
+  }
+
+  @include md-min {
+    .sub-cont-section:not(.section-01) {
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
+
+    .sub-cont-section + .sub-cont-section {
+      padding-top: 0;
+    }
+  }
+
+  @include lg-max {
+    .apply-table {
+      .flex-table__item {
+        width: 100%;
+      }
+
+      .flex-table__item + .flex-table__item .flex-table__th {
+        border-left: 0;
+      }
+
+      .flex-table__row:first-child .flex-table__item:not(:first-child) {
+        border-top: 1px solid #dedede;
+      }
+    }
+  }
+
+  @include md-max {
+    .apply-table {
+      .flex-md-wrap {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+      }
+
+      .is_apply_selects {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        > li {
+          width: 100%;
+        }
+      }
+
+      thead,
+      colgroup {
+        display: none;
+      }
+
+      &,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      .flex-table__th {
+        width: 8rem;
+      }
+
+      .flex-table__td {
+        width: calc(100% - 8rem);
+      }
+
+      .info {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  @include ssm-max {
+    .apply-table {
+      .flex-table {
+        padding-bottom: 1rem;
+      }
+
+      .flex-table__item {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        border-top: 0 !important;
+      }
+
+      .flex-table__th,
+      .flex-table__td {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: 0 !important;
+      }
+
+      .flex-table__th {
+        background-color: #fff;
+        padding-top: 1rem;
+        padding-bottom: 0;
+      }
+
+      .flex-table__td {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.lunch-box-apply--page .section-policy {
+  .policy-box {
+    border: 1px solid #dedede;
+    padding: 1.875rem;
+    line-height: 1.88;
+  }
+
+  .policy-box__info {}
+
+  .policy-box__notice {}
+
+  .policy-agree {
+    input[type="text"] {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  .policy-agree__tit {
+    text-align: center;
+    font-weight: 800;
+    @include fz(18);
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+}
+
+.lunch-box-apply--page .section-papers {
+  .papers-table {
+    .btn_theme {
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+      min-width: auto;
+      width: 100%;
+      margin: 0.5rem auto 0;
+    }
+
+    .notice {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @include sm-min {
+    .papers-table .btn_theme {
+      max-width: 212px;
     }
   }
 }

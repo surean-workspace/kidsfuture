@@ -1,4 +1,18 @@
 $(function () {
+  /* form filebox */
+  $(document).on('change', '.filebox .upload-hidden', function () {
+    if (window.FileReader) {
+      // modern browser
+      var filename = $(this)[0].files[0].name;
+    } else {
+      // old IE
+      var filename = $(this).val().split('/').pop().split('\\').pop();
+    }
+
+    $(this).parent().parent('.filebox').find('.upload-name').val(filename);
+  });
+
+  // scroll page
   if ($('#scroll-page').length === 1) {
     var scrollSecton = $('[data-scroll]');
     var scrollNav = $('#scrollNav .nav__list');

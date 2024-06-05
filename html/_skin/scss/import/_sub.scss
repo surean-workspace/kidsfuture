@@ -1294,8 +1294,18 @@ figure.img_full_wrap figcaption {
     color: #fff;
   }
 
+  &.solid_light {
+    background-color: #f7f7f7;
+    color: rgba($color: $font-color-base, $alpha: 0.5);
+  }
+
   img {
     margin-right: 10px;
+  }
+
+  span+img {
+    margin-right: 0;
+    margin-left: auto;
   }
 
   @include sm-min {
@@ -1382,6 +1392,27 @@ figure.img_full_wrap figcaption {
   border-top: 1px solid #151515;
   text-align: center;
 
+  .required > span {
+    position: relative;
+    padding-right: 0.625em;
+
+    &:after {
+      content: "*";
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $color-base;
+    }
+  }
+
+  th.required > span:after {
+    line-height: 1;
+  }
+
+  .pd-0 {
+    padding: 0;
+  }
+
   th,
   td {
     vertical-align: middle;
@@ -1414,7 +1445,9 @@ figure.img_full_wrap figcaption {
 
 @include md-max {
   table.mb-block {
-    thead {
+
+    thead,
+    colgroup {
       display: none;
     }
 
@@ -1428,6 +1461,81 @@ figure.img_full_wrap figcaption {
 
     td {
       text-align: left;
+    }
+  }
+}
+
+.sub-wrap-conts form {
+  .radios {
+    @include d-flex-wrap;
+
+    > li {
+      margin-right: 1em
+    }
+  }
+
+  .filebox {
+    position: relative;
+    font-size: 0;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    padding-left: 9rem;
+
+    input[type="text"] {
+      border: 0;
+      border-radius: 0;
+      background-color: #fff !important;
+      width: 100% !important;
+      padding: 0 0.5em;
+      @include fz(18);
+      line-height: 1.5;
+    }
+
+    input[type="file"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+      background-color: transparent;
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 1px;
+      cursor: pointer;
+      display: table;
+      width: calc(8.375rem + 1px);
+      height: 100%;
+      padding: 0.2rem 1rem;
+      background-color: #777;
+      border: 0;
+      color: #fff;
+      text-align: center;
+      line-height: 1.2;
+      border-radius: 50px;
+      @include fz(18);
+      font-weight: 800;
+      font-family: $font-family-base;
+      @include transition;
+      -webkit-transition-property: background-color;
+      -o-transition-property: background-color;
+      transition-property: background-color;
+
+      > span {
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 1.12em;
+      }
+
+      @include bp-hover {
+        background-color: $color-base-hover;
+      }
     }
   }
 }
