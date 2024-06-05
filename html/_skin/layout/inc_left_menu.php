@@ -50,7 +50,7 @@ if (!empty($arrNav[substr(@$category_code,0,2)]['sub'])) { // 2depth 가 있을�
 if (!empty($arrSubMenu[substr(@$category_code,0,4)]['sub'])) { // 3depth 가 있을경우 표출 (클래스명을 바꿔서 디자인에 맞게 스타일 잡아주세요.)
     echo '
     <div class="cateBox ce_item">
-        <ul class="category_list--fc">';
+        <ul class="category_list_big--fc">';
     $index = 1;
     foreach($arrSubMenu[substr(@$category_code,0,4)]['sub'] as $key => $val) {
         $val['title'] = unserialize($val['title'])[getLocale()];

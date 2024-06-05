@@ -72,6 +72,18 @@
   color: #666 !important;
 }
 
+.bg_base {
+  background-color: $color-base !important;
+}
+
+.bg_point {
+  background-color: $color-point !important;
+}
+
+.bg_lsky {
+  background-color: #eafaff;
+}
+
 @include xl-min {
   .pc_none {
     display: none !important;
@@ -1366,7 +1378,7 @@ html {
             display: block;
             font-weight: 700;
             @include fz(20);
-            padding: 0 4em;
+            padding: 0 3em;
             line-height: $header-pc-height;
             color: $header-pc-1depth-color;
             @include transition;

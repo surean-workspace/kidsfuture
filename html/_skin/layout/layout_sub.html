@@ -11,8 +11,8 @@ if(!empty(@$arrNav[substr($category_code,0,2)]['sub'])) {
 
 
 <body id="sub" class="page-<?=@$code?> dep1-<?=@$cf_dep1_txt?>--fc page-url-<?=@$cf_url_txt?>--fc">
-<iframe name="iframe_process" width="0" height="0" frameborder="0" style="display:none;"></iframe>
-<section id="wrapper">
+  <iframe name="iframe_process" width="0" height="0" frameborder="0" style="display:none;"></iframe>
+  <section id="wrapper">
     <?php include('html/_skin/'._SKIN.'/layout/inc_top_menu.php');?>
     <?php
     $quick_option = $this->objDBH->getRow("select quick_option from tbl_master");
@@ -22,26 +22,35 @@ if(!empty(@$arrNav[substr($category_code,0,2)]['sub'])) {
     ?>
 
     <main id="contents" class="common_effect">
-	<?=@$head_content?>
-    <?php // include('html/_skin/'._SKIN.'/layout/inc_navigation_middle.php');?>
-        <section id="subWrap">
-            <?php include('html/_skin/'._SKIN.'/layout/inc_left_menu.php');?>
-            <section id="subConts">
-            	<div class="ce_item">
-            		<?php echo $content_for_layout; ?>
-				      </div>
-            </section>
+      <?=@$head_content?>
+      <?php // include('html/_skin/'._SKIN.'/layout/inc_navigation_middle.php');?>
+      <section id="subWrap">
+        <?php include('html/_skin/'._SKIN.'/layout/inc_left_menu.php');?>
+        <section id="subConts">
+          <div class="ce_item">
+            <?php echo $content_for_layout; ?>
+          </div>
         </section>
-        <figure class="f_common_obj">
-          <img src="/html/_skin/img/common/bg_obj_common_bottom.svg" alt="bottom">
-        </figure>
+      </section>
+      <figure class="f_common_obj">
+        <img src="/html/_skin/img/common/bg_obj_common_bottom.svg" alt="bottom">
+      </figure>
     </main>
     <?php echo @$arrSitemap; ?>
     <?php echo @$bottom_for_layout; ?>
-</section>
-<?php echo $javascript_for_layout; ?>
 
-<script src="<?=get_url('/html/_skin/'._SKIN.'/js/sub.js');?>"></script>
+    <div id="scrollNav">
+      <nav class="scroll-nav--fc">
+        <ul class="nav__list">
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <?php echo $javascript_for_layout; ?>
+
+  <script src="<?=get_url('/html/_skin/'._SKIN.'/js/sub.js');?>"></script>
 
 </body>
+
 </html>

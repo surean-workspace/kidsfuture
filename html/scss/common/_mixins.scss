@@ -394,6 +394,22 @@
 }
 
 /* element */
+@mixin item-dot-txt($bg-color: inherit, $marginTop: 0) {
+  position: relative;
+  padding-left: 1em;
+
+  &:before {
+    content: '·';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: $marginTop;
+    border-radius: 50%;
+    color: $bg-color;
+  }
+}
+
 @mixin item-dot($bg-color, $width, $marginTop: 0.63em) {
   position: relative;
   padding-left: calc(#{$width} + 0.5rem);
