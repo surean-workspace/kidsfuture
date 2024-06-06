@@ -1517,7 +1517,10 @@ figure.img_full_wrap figcaption {
       top: 0;
       left: 1px;
       cursor: pointer;
-      display: table;
+      // display: table;
+      @include d-inline-flex-wrap;
+      @include align-items-center;
+      @include justify-content-center;
       width: calc(8.375rem + 1px);
       height: 100%;
       padding: 0.2rem 1rem;
@@ -1536,8 +1539,10 @@ figure.img_full_wrap figcaption {
       transition-property: background-color;
 
       > span {
-        display: table-cell;
-        vertical-align: middle;
+        // display: table-cell;
+        display: block;
+        width: 100%;
+        // vertical-align: middle;
         line-height: 1.12em;
       }
 

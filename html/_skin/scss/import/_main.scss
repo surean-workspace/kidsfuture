@@ -10,6 +10,18 @@
   background: no-repeat center/cover;
   height: $main-pc-visual-height;
 
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include transform(translateY(100%));
+    background: url(/html/_skin/img/main/bg_mv_grond.jpg) no-repeat center/cover;
+  }
+
   .obj {
     position: absolute;
     line-height: 0;
@@ -101,7 +113,7 @@
   .obj-dog2 {
     z-index: 3;
     top: 76%;
-    right: 14%;
+    right: 18%;
   }
 
   .obj-butterfly {
@@ -236,6 +248,9 @@
   @include sm-max {
     .obj-house {
       // display: none;
+      width: 250px;
+      top: 530px;
+      right: -10%;
     }
   }
 }
@@ -548,12 +563,13 @@
   position: relative;
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: -8.75rem;
+  margin-top: -7.5rem;
 
   .bg {
     line-height: 0;
     display: block;
-    width: 100%;
+    width: 110%;
+    margin-left: -5%;
   }
 
   .obj {
@@ -662,6 +678,8 @@
   @include md-min {}
 
   @include lg-min {
+    margin-top: -5rem;
+
     .bg-obj-2 {
       display: inline-block;
     }

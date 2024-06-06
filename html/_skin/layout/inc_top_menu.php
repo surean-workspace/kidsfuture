@@ -104,10 +104,11 @@ else {
 ?>
               <a href="/member/form-edit"><?=_LANG('Mypage')?></a>
 <?php
-  }
+  } else {
 ?>
               <a href="/index.php?tpf=_module/member/logout"><?=_LANG('로그아웃')?></a>
 <?php
+  }
 }
 ?>
             </li>

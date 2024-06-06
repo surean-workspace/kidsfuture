@@ -2481,7 +2481,13 @@ ul.footer-bottom-link {
 }
 
 @include xl-max {
-  #footer {}
+  #footer {
+    .footer-logo {
+      width: 8.3125rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 @include md-max {

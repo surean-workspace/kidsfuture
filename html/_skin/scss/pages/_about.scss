@@ -994,6 +994,12 @@
   }
 }
 
+.lunch-box--page .section-01 {
+  .sub_cont_tit + p {
+    line-height: 1.5;
+  }
+}
+
 .lunch-box--page .section-apply {
   padding-top: 0;
 
@@ -1208,6 +1214,7 @@
       font-weight: 800;
       padding-top: 1.22em;
       padding-bottom: 1.22em;
+      min-width: 8em;
 
       > span {
         margin-right: 0;
@@ -1297,6 +1304,39 @@
         display: block;
         margin-left: 0;
         margin-top: 4px;
+      }
+    }
+
+    .form-btns__box {
+      .btn_theme {
+        font-size: 0.875rem;
+      }
+
+      .btn-list {
+        margin: -5px -5px 0;
+
+        > li {
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  @include sm-max {
+    .form-btns__box {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+      .btn_theme {
+        width: 100%;
+      }
+
+      .btn-list {
+        width: calc(100% + 10px);
+
+        > li {
+          flex: 1;
+        }
       }
     }
   }
