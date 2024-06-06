@@ -55,4 +55,10 @@ $(function () {
       );
     return false;
   }
+
+  /* aos */
+  AOS.init({
+    once: true,
+    duration: 600,
+  });
 });

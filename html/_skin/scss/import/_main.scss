@@ -34,6 +34,15 @@
   }
 
   .obj-child1,
+  .obj-child2,
+  .obj-child3,
+  .obj-dog1,
+  .obj-dog2,
+  .obj-butterfly {
+    opacity: 0;
+  }
+
+  .obj-child1,
   .obj-dog2,
   .obj-child3 {
     animation: bounceIn .6s linear .3s forwards, bgMotion2 3s linear .6s forwards infinite alternate;
@@ -146,6 +155,13 @@
     .btn-wrap {
       margin-top: 2rem;
     }
+
+    .btn_theme {
+      @include bp-hover {
+        border-color: $color-base-hover;
+        background-color: $color-base-hover;
+      }
+    }
   }
 
   @include md-min {
@@ -249,7 +265,7 @@
     .obj-house {
       // display: none;
       width: 250px;
-      top: 530px;
+      top: 500px;
       right: -10%;
     }
   }
@@ -560,6 +576,7 @@
 
 /* main section 01 */
 .main_about {
+  z-index: 3;
   position: relative;
   padding-top: 0;
   padding-bottom: 0;
@@ -622,6 +639,12 @@
 
     .btn-wrap {
       margin-top: 2.125rem;
+    }
+
+    .btn_theme {
+      @include bp-hover {
+        background-color: rgba($color: #000000, $alpha: 0.5);
+      }
     }
   }
 
@@ -710,6 +733,12 @@
 
 /* 참여하기 */
 .main_participate {
+  z-index: 2;
+  position: relative;
+  padding-top: 18rem;
+  margin-top: -14rem;
+  background-color: #fff;
+
   .main_cont_tit {
     margin-bottom: 2.125rem;
   }
@@ -768,6 +797,9 @@
   }
 
   @include md-min {
+    padding-top: 16rem;
+    margin-top: -14rem;
+
     .main_participate__list {
       @include d-flex-wrap;
       margin: -8px -8px 0;
@@ -821,6 +853,7 @@
 }
 
 .main_boards {
+  z-index: 3;
   position: relative;
 
   .bottom_obj {
@@ -967,6 +1000,10 @@
 /* 사업소식 */
 .main_news {
   padding-bottom: 0;
+
+  .main_cont_tit {
+    margin-bottom: 2.25rem;
+  }
 
   .board-wrap--fc {
     @include swiper;

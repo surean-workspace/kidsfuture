@@ -345,6 +345,13 @@
 
 // lh한국토지주택공사 소개
 .lh-intro--page {
+  .md-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .value-list {
     @include d-flex-wrap;
     @include justify-content-around;
@@ -1047,6 +1054,10 @@
 
       > span {
         padding-right: 1em;
+      }
+
+      @include bp-hover {
+        background-color: rgba($color: #000000, $alpha: 0.5);
       }
     }
 
