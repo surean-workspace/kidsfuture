@@ -217,6 +217,7 @@
     padding-left: 1rem;
     color: rgba($color: $font-color-base, $alpha: 0.8);
     line-height: 1.89;
+    @include fz(18);
 
     .words-tit {
       @include fz(40);
@@ -1003,12 +1004,25 @@
 
 .lunch-box--page .section-01 {
   .sub_cont_tit + p {
+    @include fz(18);
     line-height: 1.5;
   }
 }
 
+.lunch-box--page .section-criteria {
+  padding-bottom: 25px;
+
+  @include md-min {
+    padding-bottom: 50px;
+  }
+}
+
 .lunch-box--page .section-apply {
-  padding-top: 0;
+  padding-top: 40px;
+
+  @include md-min {
+    padding-top: 70px;
+  }
 
   .apply-banner {
     @include overflow-hidden;
@@ -1383,6 +1397,13 @@
         padding-bottom: 0.5rem;
       }
     }
+  }
+}
+
+.lunch-box-apply--page .section-01 {
+  .sub_cont_desc {
+    @include fz(22);
+    margin-bottom: 3rem;
   }
 }
 

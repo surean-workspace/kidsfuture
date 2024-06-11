@@ -31,6 +31,22 @@ $(function () {
       e.preventDefault();
       scrollEvt(target, $('#header .header-bottom').height(), 300);
     });
+
+    $(window).scroll(function () {
+      var headerH = $('.header-bottom').height();
+      var navH = $('#scrollNav').height();
+
+      $('.sub-cont-section[data-scroll]').each(function (index) {
+        if ($(this).offset().top - (headerH + navH + 10) <= $(window).scrollTop()) {
+          scrollNav.find('> li').removeClass('active');
+          scrollNav.find('> li').eq(index).addClass('active');
+        }
+
+        if (index === 0 && $(this).offset().top - (headerH + navH + 10) >= $(window).scrollTop()) {
+          scrollNav.find('> li').removeClass('active');
+        }
+      });
+    });
   }
 
   $(window).on('scroll', function () {

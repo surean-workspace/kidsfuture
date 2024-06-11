@@ -443,7 +443,7 @@
 $(function(){
 	var inTarget = $('.gnb__nav .depth2 > li');
 	inTarget.each(function(){
-		if ($(this).find('ul').length != 0) {
+		if ($(this).find('ul > li').length != 0) {
 			$(this).addClass('in');
 		}
 	});

@@ -21,10 +21,24 @@
 
 // 회원가입
 .member-wrap--fc .form-table--fc {
+  .symbol {
+    align-self: center;
+  }
+
   .join-form-area--fc {
     select {
       width: 100%;
       max-width: 430px;
     }
+  }
+}
+
+.member-wrap--fc .join-form-wrap--fc {
+
+  input[type="text"],
+  input[type="tel"],
+  input,
+  select {
+    @include fz(18);
   }
 }

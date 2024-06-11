@@ -1336,6 +1336,7 @@ figure.img_full_wrap figcaption {
 
 // scroll nav
 .scroll-nav--fc {
+  z-index: 14;
   position: fixed;
   top: calc(75% - #{$header-pc-height});
   -ms-transform: translateY(-50%);
@@ -1347,6 +1348,14 @@ figure.img_full_wrap figcaption {
   .nav__list > li {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+
+  .active a {
+    color: rgba($color: $color-base, $alpha: 0.8);
+
+    > span:before {
+      background-color: $color-base;
+    }
   }
 
   a {

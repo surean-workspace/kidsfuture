@@ -60,7 +60,7 @@ if (!empty($category_code)) {
     </div>
   </div>
   <div class="header-bottom">
-    <p class="logo"><a href="/"><img src="/html/_skin/img/common/logo.png" alt="logo"></a></p>
+    <p class="logo"><a href="/"><img src="/html/_skin/img/common/logo.svg" alt="logo"></a></p>
     <div class="m-menu-btn">
       <span></span>
       <span></span>
