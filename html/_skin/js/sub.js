@@ -37,7 +37,7 @@ $(function () {
       var navH = $('#scrollNav').height();
 
       $('.sub-cont-section[data-scroll]').each(function (index) {
-        if ($(this).offset().top - (headerH + navH + 10) <= $(window).scrollTop()) {
+        if ($(this).offset().top - (headerH + navH + 2) <= $(window).scrollTop()) {
           scrollNav.find('> li').removeClass('active');
           scrollNav.find('> li').eq(index).addClass('active');
         }
