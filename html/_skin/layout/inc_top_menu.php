@@ -32,7 +32,7 @@ if (!empty($category_code)) {
 				else {					// 로그인 후
 					if(getLoginLevel()!="99"){  // 회원
 ?>
-        <li class="type-member line-r"><a href="/member/form-edit"><?=_LANG('Mypage')?></a></li>
+        <li class="type-member line-r"><a href="/member/form-edit"><?=_LANG('나의 정보')?></a></li>
         <?php
 					}
 ?>
@@ -102,7 +102,7 @@ if (!getLoginId()) {
 else {
   if(getLoginLevel()!="99"){  // 회원
 ?>
-              <a href="/member/form-edit"><?=_LANG('Mypage')?></a>
+              <a href="/member/form-edit"><?=_LANG('나의 정보')?></a>
 <?php
   } else {
 ?>

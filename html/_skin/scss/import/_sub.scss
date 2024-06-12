@@ -1311,7 +1311,7 @@ figure.img_full_wrap figcaption {
     margin-right: auto;
   }
 
-  span+img {
+  span + img {
     margin-right: 0;
     margin-left: 2em;
   }
@@ -1415,9 +1415,10 @@ figure.img_full_wrap figcaption {
 
     &:after {
       content: "*";
-      position: absolute;
-      top: 0;
-      right: 0;
+      margin-left: 0.2em;
+      // position: absolute;
+      // top: 0;
+      // right: 0;
       color: $color-base;
     }
   }
