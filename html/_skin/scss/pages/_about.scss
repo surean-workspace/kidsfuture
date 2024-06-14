@@ -1215,6 +1215,12 @@
       margin-left: 1em;
     }
 
+    .symbol {
+      flex-shrink: 0;
+      margin-left: 0.3em;
+      margin-right: 0.3em;
+    }
+
     .caption-box {
       border-bottom: 1px solid #dedede;
       padding: 1rem 1.5rem;
@@ -1272,7 +1278,7 @@
     }
   }
 
-  @include lg-max {
+  @include xl-max {
     .apply-table {
       .flex-table__item {
         width: 100%;

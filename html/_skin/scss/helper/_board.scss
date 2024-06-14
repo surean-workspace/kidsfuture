@@ -452,6 +452,16 @@
 
 /*----- 갤러리 - 이미지 */
 .board-wrap--fc .gallery-list--fc.gallery {
+  .gallery-title--fc {
+    @include ellipsis(2, 1.5em);
+    text-align: left;
+
+    img {
+      margin-left: 0.2em;
+      margin-right: 0.2em;
+    }
+  }
+
   figure {
     a {
       .thumb-wrap--fc {
