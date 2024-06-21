@@ -80,10 +80,11 @@
 
   input[type='text'],
   select {
-    @include fz(18, pre);
+    padding-left: 1em;
     border: solid 1px #fff;
     border-radius: 10px;
-    padding-left: 1em;
+    @include fz(18);
+    font-weight: 300;
   }
 
   input[type='text'] {
@@ -206,6 +207,13 @@
   }
 }
 
+@include sm-max {
+  .board-search-wrap--fc form {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 @include ssm-max {
 
   .board-search-wrap--fc p:first-of-type,
@@ -223,6 +231,10 @@
   margin-left: -0.625rem;
   margin-right: -0.625rem;
 
+  &.space-around {
+    @include justify-content-around;
+  }
+
   .legend-tit {
     display: block;
     align-self: center;
@@ -230,6 +242,7 @@
     @include fz(18);
     font-weight: 300;
     color: #151515;
+    text-align: left;
   }
 
   fieldset {
@@ -250,7 +263,9 @@
   }
 
   @include xl-min {
-    .fieldset-filed {
+
+    .fieldset-filed,
+    .fieldset-status {
       width: 18%;
     }
 
@@ -645,7 +660,6 @@
   .item-caption__head__tag {
     width: 5.625rem;
     text-align: right;
-
 
     > span {
       flex-shrink: 0;

@@ -1,0 +1,83 @@
+.apply-status--page {
+  .board-search-wrap--fc .search-inline-inputs {
+    @include xl-min {
+      @include justify-content-around;
+    }
+
+    @include xl-max {
+
+      .fieldset-filed,
+      .fieldset-status {
+        width: 25%;
+      }
+
+      .fieldset-date {
+        width: 50%;
+      }
+    }
+
+    @include md-max {
+      p {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .fieldset-filed {
+        width: 40%;
+      }
+
+      .fieldset-date {
+        width: 60%;
+      }
+
+      .fieldset-status {
+        width: 100%;
+      }
+    }
+
+    @include sm-max {
+
+      .fieldset-filed,
+      .fieldset-date,
+      .fieldset-status {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* 신청내역 */
+.apply-status-list--fc {
+
+  td,
+  th {
+    border-right: 0;
+    border-left: 0;
+    height: 4.75rem;
+    padding: 10px;
+  }
+
+  td + td,
+  th + th {
+    border-left: 1px solid #dedede;
+  }
+
+  .btn_theme {
+    @include fz();
+    font-weight: 700;
+    max-width: 134px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include bp-hover {
+      background-color: $color-point;
+    }
+  }
+
+  @include md-min {
+    .board-title--fc {
+      text-align: left;
+      padding-left: 1rem;
+    }
+  }
+}

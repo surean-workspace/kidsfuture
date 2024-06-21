@@ -1332,6 +1332,31 @@ figure.img_full_wrap figcaption {
   img {
     margin-right: 10px;
   }
+
+  &.solid_white {
+    background-color: #fff;
+    color: #000;
+  }
+
+  &.solid_base {
+    background-color: $color-base;
+    color: #fff;
+  }
+
+  &.solid_point {
+    background-color: $color-point;
+    color: #fff;
+  }
+
+  &.solid_black {
+    background-color: #0d0d0d;
+    color: #fff;
+  }
+
+  &.solid_light {
+    background-color: #f7f7f7;
+    color: rgba($color: $font-color-base, $alpha: 0.5);
+  }
 }
 
 // scroll nav
