@@ -1,4 +1,40 @@
 $(function () {
+  /* 활동일지 슬라이드 */
+  $('.gallery-list--fc.activity .thumb-slider--fc').each(function (i) {
+    $(this).addClass('type' + i);
+
+    $(this)
+      .find("[class*='swiper-button']")
+      .addClass('type' + i);
+
+    $(this)
+      .find('.swiper-pagination')
+      .addClass('type' + i);
+
+    var container = $(this).find('.swiper-container');
+    if (container.find('.swiper-slide').length === 0) {
+      $(this).find("[class*='swiper-button']").addClass('swiper-button-disabled');
+    }
+    if (container.find('.swiper-slide').length > 0) {
+      new Swiper(container, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        speed: 400,
+        observer: true,
+        observeParents: true,
+        /* autoplay: {
+          delay: 6000,
+          disableOnInteraction: false,
+        }, */
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+      });
+    }
+  });
+ 
+
   /* form filebox */
   $(document).on('change', '.filebox .upload-hidden', function () {
     if (window.FileReader) {

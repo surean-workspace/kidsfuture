@@ -117,6 +117,26 @@
   p.search-input-wrap--fc {
     @include d-inline-flex;
   }
+
+  .search-period-wrap--fc {
+    @include d-flex;
+
+    .symbol {
+      align-self: center;
+      margin-left: 0.4rem;
+      margin-right: 0.4rem;
+      @include fz(18);
+    }
+
+    .date_pick {
+      max-width: 219px;
+      padding-right: calc(2rem + 10px);
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1rem;
+      background-image: url(/html/_skin/img/common/ico_calendar.svg);
+    }
+  }
 }
 
 @include md-min {
@@ -195,6 +215,91 @@
 
   .board-search-wrap--fc p:last-of-type {
     margin-top: 8px;
+  }
+}
+
+.board-search-wrap--fc .search-inline-inputs {
+  @include d-flex;
+  margin-left: -0.625rem;
+  margin-right: -0.625rem;
+
+  .legend-tit {
+    display: block;
+    align-self: center;
+    padding-right: 1rem;
+    @include fz(18);
+    font-weight: 300;
+    color: #151515;
+  }
+
+  fieldset {
+    @include d-flex;
+    max-width: none;
+    margin: 0;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
+
+  p {
+    padding: 0;
+    width: 100%;
+  }
+
+  p.search-select-wrap--fc {
+    width: 100%;
+  }
+
+  @include xl-min {
+    .fieldset-filed {
+      width: 18%;
+    }
+
+    .fieldset-date {
+      width: 35%;
+    }
+
+    .fieldset-keyword {
+      width: 47%;
+    }
+  }
+
+  @include xl-max {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    fieldset {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+
+    .fieldset-filed {
+      width: 40%;
+    }
+
+    .fieldset-date {
+      width: 60%;
+    }
+
+    .fieldset-keyword {
+      width: 100%;
+
+      p {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include sm-max {
+
+    .fieldset-filed,
+    .fieldset-date {
+      width: 100%;
+    }
+
+    .legend-tit {
+      min-width: 4rem;
+    }
   }
 }
 
@@ -404,7 +509,8 @@
   border-top: 0;
   text-align: center;
 
-  figure {
+  figure,
+  .item {
     margin-top: 0;
 
     a {
@@ -425,7 +531,9 @@
   }
 
   @include md-min {
-    figure {
+
+    figure,
+    .item {
       a:hover {
         .thumb-wrap--fc {
           &:after {
@@ -443,7 +551,8 @@
     margin-left: -20px;
     margin-right: -20px;
 
-    figure {
+    figure,
+    .item {
       padding: 0 20px;
       width: 33.3333%;
     }
@@ -462,7 +571,8 @@
     }
   }
 
-  figure {
+  figure,
+  .item {
     a {
       .thumb-wrap--fc {
         background-color: #f6f6f6;
@@ -478,6 +588,110 @@
           max-height: calc(100% + 100px);
         }
       }
+    }
+  }
+}
+
+/*----- 갤러리 - 활동일지 */
+.gallery-list--fc.activity {
+
+  .item,
+  figure {
+    a .thumb-wrap--fc {
+      > img {
+        width: auto;
+        max-width: none;
+        min-height: 100%;
+        max-height: calc(100% + 20px);
+      }
+
+      &.embed-responsive-16by9 {
+        padding-bottom: 100%;
+      }
+    }
+  }
+
+  figcaption {
+    line-height: 1.5;
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .gallery-title--fc {
+    @include fz(18);
+  }
+
+  .gallery-date--fc {
+    display: block;
+    text-align: left;
+    @include fz(18);
+    color: rgba($color: $font-color-base, $alpha: 0.8);
+  }
+
+  .item-caption__head {
+    @include d-flex;
+    margin-bottom: 0.5rem;
+  }
+
+  .item-caption__head__tit {
+    width: calc(100% - 5.625rem);
+    @include fz(18);
+    font-weight: 700;
+    color: $color-base;
+    align-self: center;
+    @include ellipsis(1, 1.25em);
+  }
+
+  .item-caption__head__tag {
+    width: 5.625rem;
+    text-align: right;
+
+
+    > span {
+      flex-shrink: 0;
+      @include d-inline-flex;
+      @include align-items-center;
+      @include justify-content-center;
+      width: 5.3125rem;
+      height: 2.0625rem;
+      padding: 0 1em;
+      margin-left: 0.3em;
+      margin-bottom: 0.5em;
+      @include fz(18);
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+      border-top-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      background-color: $color-base;
+    }
+
+    .complete {
+      background-color: $color-point;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 6%;
+  }
+
+  .swiper-pagination-bullet {
+    width: 0.8125rem;
+    height: 0.8125rem;
+    background-color: $font-color-base;
+    opacity: 0.56;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #094585;
+    opacity: 1;
+  }
+
+  @include xl-min {
+
+    .item,
+    figure {
+      width: 25%;
     }
   }
 }
