@@ -58,3 +58,139 @@
     }
   }
 }
+
+.edu-apply--page .section-apply {
+  padding-top: 40px;
+
+  @include md-min {
+    padding-top: 70px;
+  }
+
+  .apply-banner {
+    @include overflow-hidden;
+    position: relative;
+    min-height: 23.875rem;
+    padding: 6.25rem 5rem;
+    background-color: #292d62;
+    color: #fff;
+    border-radius: 1.875rem;
+
+    .obj {
+      position: absolute;
+      right: 0;
+      bottom: -3px;
+      line-height: 0;
+      width: 50%;
+      text-align: center;
+    }
+  }
+
+  .apply-banner__words {
+    z-index: 2;
+    position: relative;
+    padding-right: 44%;
+    @include fz(18);
+    line-height: 1.67;
+    color: rgba($color: #fff, $alpha: 0.8);
+
+    .words-tit {
+      @include fz(40);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.33;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-wrap {
+      margin-top: 2rem;
+    }
+
+    .btn-list {
+      @include d-flex-wrap;
+      margin-top: -5px;
+      margin-right: -5px;
+      margin-left: -5px;
+
+      > li {
+        padding: 5px;
+        flex-basis: 50%;
+        flex-grow: 1;
+      }
+
+      a,
+      button {
+        width: 100%;
+      }
+    }
+
+    .btn_theme {
+      font-weight: 800;
+      @include fz(18);
+      @include justify-content-between;
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+
+      span + img {
+        margin-left: 1em;
+      }
+
+      @include bp-hover {
+        background-color: rgba($color: #000000, $alpha: 0.5);
+      }
+    }
+
+    .btn-second:not(:hover) {
+      background-color: #6c90e8;
+    }
+
+    .btn-apply {}
+
+    .btn-apply img {
+      margin-left: auto;
+    }
+  }
+
+  @include sm-min {
+    .btn_theme {
+      min-width: 9.333em;
+    }
+  }
+
+  @include lg-min {
+    .apply-banner__words .btn-wrap {
+      max-width: 380px;
+    }
+  }
+
+  @include lg-max {
+    .apply-banner {
+      padding-bottom: 18rem;
+
+      .obj {
+        left: 0;
+        width: 100%;
+        height: 14rem;
+        text-align: center;
+
+        img {
+          max-height: 100%;
+        }
+      }
+    }
+
+    .apply-banner__words {
+      padding-right: 0;
+    }
+  }
+
+  @include sm-max {
+    .apply-banner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .apply-banner__words .btn-list > li {
+      flex-basis: 100%;
+    }
+  }
+}

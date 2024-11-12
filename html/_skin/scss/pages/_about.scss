@@ -1120,6 +1120,12 @@
   .apply-table {
     text-align: left;
 
+    .btn_theme {
+      padding-top: 0.6em;
+      padding-bottom: 0.6em;
+      line-height: 1.2;
+    }
+
     .flex-table {}
 
     input:not([type="radio"]):not([type="checkbox"]) {
@@ -1166,6 +1172,12 @@
       color: #151515;
       width: 156px;
       border-right: 1px solid #dedede;
+
+      small {
+        display: block;
+        font-size: 75%;
+        line-height: 1.25;
+      }
     }
 
     .flex-table__item + .flex-table__item .flex-table__th {
@@ -1208,6 +1220,11 @@
     }
 
     .unit {
+      padding-right: 1em;
+    }
+
+    input + .unit {
+      padding-right: 0;
       padding-left: 1em;
     }
 
@@ -1226,6 +1243,15 @@
       padding: 1rem 1.5rem;
       font-weight: 800;
       color: $color-base;
+
+      &.border-top {
+        border-top: 1px solid #dedede;
+        border-bottom: 0;
+      }
+
+      &.border-y {
+        border-top: 1px solid #dedede;
+      }
     }
 
     .form__place--fc {
@@ -1461,3 +1487,4 @@
     }
   }
 }
+ 

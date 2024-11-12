@@ -108,6 +108,17 @@ $(function () {
     return false;
   }
 
+  $('input[name="eduApply1"').on("change", function () {
+    var displayTarget = $(this).parents('td').find('.radio-display-target');
+    if($(this).val() === '참여') {
+      displayTarget.show();
+    } else {
+      displayTarget.hide();
+    }
+
+    
+  })
+
   /* aos */
   AOS.init({
     once: true,

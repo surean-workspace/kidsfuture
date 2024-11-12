@@ -1262,7 +1262,7 @@ figure.img_full_wrap figcaption {
 }
 
 .btn_theme {
-  @include d-inline-flex-wrap;
+  @include d-inline-flex;
   @include align-items-center;
   border-radius: 50px;
   @include fz(18);
@@ -1585,5 +1585,73 @@ figure.img_full_wrap figcaption {
         background-color: $color-base-hover;
       }
     }
+  }
+}
+
+.theme_modal {
+
+  .modal-main-header,
+  .modal-footer {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .modal-footer {
+    padding-bottom: 3rem;
+
+    .modal-info-box {
+      margin-top: 0;
+    }
+  }
+
+  .modal-content {
+    border: 0;
+    @include overflow-hidden;
+    border-radius: 1.25rem;
+    box-shadow: 10.6px 22.7px 68px 0 rgba(56, 56, 56, 0.1);
+  }
+
+  .modal-header {
+    padding: 0.625rem 1.375rem;
+    background-color: $color-point;
+  }
+
+  .modal-header .close {
+    position: static;
+    margin-left: auto;
+    margin-right: -0.8rem;
+
+    &,
+    &:before {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &:before {
+      background-image: url(/html/_skin/img/common/ico_modal_close.png);
+      border: 0;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:hover:before {
+      background-color: #fff;
+    }
+  }
+
+  .modal-body {
+    color: #202020;
+  }
+
+  .modal-body__head {
+    padding-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .modal-title {
+    @include fz(22);
+    font-weight: 700;
   }
 }
